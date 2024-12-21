@@ -5,6 +5,7 @@ import reportWebVitals from './reportWebVitals';
 import Footer from './Footer';
 import Body from './Body';
 import { BrowserRouter, Route, Link, Routes } from 'react-router-dom';
+import Catalogue from './Catalogue';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -18,10 +19,17 @@ function LoginPage() {
   );
 }
 
-root.render(
-  <BrowserRouter>
-    <LoginPage />
+function MainApp() {
+  return <BrowserRouter>
+    <Routes>
+      <Route path='/' element={<LoginPage/>} />
+      <Route path='/catalogue' element={<Catalogue/>} />
+    </Routes>
   </BrowserRouter>
+}
+
+root.render(
+  <MainApp />
 );
 
 // If you want to start measuring performance in your app, pass a function

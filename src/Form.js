@@ -1,9 +1,11 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 function Form() {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [passwordTooShort, setPasswordTooShort] = useState(false);
+    const navigate = useNavigate();
 
     const clearInputFields = () => {
         console.log(`username: ${username}`);
@@ -37,6 +39,7 @@ function Form() {
         } else {
             setPasswordTooShort(false);
         }
+        navigate("/catalogue");
         clearInputFields();
     }
 
