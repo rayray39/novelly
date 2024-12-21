@@ -1,5 +1,4 @@
 import { useState } from "react";
-import Input from "./Input";
 
 function Form() {
     const [username, setUsername] = useState('');
@@ -22,7 +21,8 @@ function Form() {
     }
 
     const PasswordError = () => {
-        return <p>Your password should contain more than 6 characters!</p>
+        const errorStyle = {fontSize: "12px", textAlign: "center", color: 'red'};
+        return <p style={errorStyle}>Your password should contain more than 6 characters!</p>
     }
 
     const handleClick = (e) => {
