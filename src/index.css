@@ -1,0 +1,92 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.main-title {
+  margin-bottom: 30px;
+  font-size: 60px;
+  letter-spacing: 4px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-weight: 900;
+}
+
+footer {
+  text-align: center;
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+}
+
+#main-body {
+  display: flex;
+  position: fixed;
+  inset: 0px;
+  height: 30rem;
+  margin: auto;
+  max-width: 100vw;
+  max-height: 100vh;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.typewriter {
+  margin-bottom: 30px;
+  font-size: 60px;
+  letter-spacing: 4px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-weight: 900;
+}
+
+.form-control {
+  font-size: 16px;
+  width: 300px;
+  border-radius: 10px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+#sign-in-button {
+  margin-top: 10px;
+  border-radius: 10px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+/* Cursor */
+.cursor{
+  position: relative;
+  width: 24em;
+  margin: 0 auto;
+  border-right: 2px solid rgba(255,255,255,.75);
+  font-size: 60px;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  transform: translateY(-50%);
+  letter-spacing: 4px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-weight: 900;    
+}
+/* Animation */
+.typewriter-animation {
+animation: 
+  typewriter 2s steps(21) 1s 1 normal both, 
+  blinkingCursor 500ms steps(50) infinite normal;
+}
+@keyframes typewriter {
+from { width: 0; }
+to { width: 60%; }
+}
+@keyframes blinkingCursor{
+from { border-right-color: rgba(0,0,0,.75); }
+to { border-right-color: transparent; }
+}
