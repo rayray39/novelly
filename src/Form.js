@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import users from './data/users.json';
 
 function Form() {
     const [username, setUsername] = useState('');
@@ -29,6 +30,7 @@ function Form() {
 
     const handleClick = (e) => {
         e.preventDefault();
+        // guard clauses for username and password validation.
         if (isEmptyFields()) {
             alert('Please fill in all the fields!');
             return;
@@ -39,7 +41,24 @@ function Form() {
         } else {
             setPasswordTooShort(false);
         }
-        navigate("/catalogue");
+
+        const loggedInUser = users.find((user) =>
+            user.username === username && user.password === password
+        );
+        if (loggedInUser) {
+            if (loggedInUser.role === 'user') {
+                // logged in as user
+                navigate('/catalogue');
+            }
+            if (loggedInUser.role === 'admin') {
+                // logged in as admin
+                navigate('/admin-page');
+            }
+        } else {
+            alert("Incorrect user credentials!");
+            return;
+        }
+
         clearInputFields();
     }
 

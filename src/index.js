@@ -4,8 +4,9 @@ import './index.css';
 import reportWebVitals from './reportWebVitals';
 import Footer from './Footer';
 import Body from './Body';
-import { BrowserRouter, Route, Link, Routes } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Catalogue from './Catalogue';
+import AdminPage from './AdminPage';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -24,6 +25,7 @@ function MainApp() {
     <Routes>
       <Route path='/' element={<LoginPage/>} />
       <Route path='/catalogue' element={<Catalogue/>} />
+      <Route path='/admin-page' element={<AdminPage/>} />
     </Routes>
   </BrowserRouter>
 }
