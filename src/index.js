@@ -9,7 +9,7 @@ import { BrowserRouter, Route, Link, Routes } from 'react-router-dom';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
-function TestApp() {
+function LoginPage() {
   return (
     <>
       <Body />
@@ -20,7 +20,7 @@ function TestApp() {
 
 root.render(
   <BrowserRouter>
-    <TestApp />
+    <LoginPage />
   </BrowserRouter>
 );
 
