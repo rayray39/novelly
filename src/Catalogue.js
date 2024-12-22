@@ -54,13 +54,11 @@ function Catalogue() {
         });
     }
 
-    return <div>
-        <h1 className="main-title">Browse through the catalogue</h1>
+    return <div id="catalogue-page">
+        <h1 className="main-title-2">CATALOGUE</h1>
 
-        <input type="text" className="form-control" placeholder="search for a book" ref={inputRef}/>
-        <button onClick={handleClick}>search</button>
-        <button onClick={processBooks}>process the books</button>
-        <button onClick={displayBooks}>display books</button>
+        <input id="searchbar" type="text" className="form-control" placeholder="search for a book" ref={inputRef}/>
+        <button id="search-button" className="btn btn-success btn-block" onClick={handleClick}>search</button>
     </div>
 }
 

@@ -20,6 +20,26 @@ code {
   font-weight: 900;
 }
 
+#catalogue-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.main-title-2 {
+  padding: 10px;
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 40px;
+  letter-spacing: 4px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-weight: 900;
+}
+
+#searchbar {
+  width: 600px;
+}
+
 footer {
   text-align: center;
   position: absolute;
@@ -59,6 +79,13 @@ footer {
   margin-top: 10px;
   border-radius: 10px;
   font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+#search-button {
+  margin-top: 10px;
+  border-radius: 10px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  width: 600px;
 }
 
 /* Cursor */
