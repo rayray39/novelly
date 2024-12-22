@@ -2,7 +2,7 @@ import { useRef, useState } from "react";
 
 function Catalogue() {
     const url = 'https://www.googleapis.com/books/v1/volumes?';
-    
+    const myApiKey = 'AIzaSyC7TkKEezr_ujGF7HtKOnu6ltnQcoHn9YM';
     const inputRef = useRef(null);
     const [books, setBooks] = useState(null);
 
@@ -58,11 +58,25 @@ function Catalogue() {
         }
     }
 
+    function DisplayBooks() {
+        const listItems = books.map(book => <ul style={{border: "1px solid black"}}>
+            <li>{book.title}</li>
+            <li>{book.authors}</li>
+            <li>{book.publishedDate}</li>
+            <li>{book.description}</li>
+        </ul>)
+        return <div className="books-display">
+            <ul>{listItems}</ul>
+        </div>
+    }
+
     return <div id="catalogue-page">
         <h1 className="main-title-2">CATALOGUE</h1>
 
         <input id="searchbar" type="text" className="form-control" placeholder="search for a book" ref={inputRef}/>
         <button id="search-button" className="btn btn-success btn-block" onClick={handleSearch}>search</button>
+
+        {books ? <DisplayBooks/> : null}
     </div>
 }
 
