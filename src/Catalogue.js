@@ -7,14 +7,14 @@ function Catalogue() {
     const [data, setData] = useState(null);
     const [books, setBooks] = useState(null);
 
-    const handleClick = () => {
+    const handleClick = async () => {
         // get search query
         const searchTerm = inputRef.current.value;
         console.log(`user is searching for: ${searchTerm}`);
 
         // make get request to api
         const fetchUrl = url + `q=${searchTerm}&key=${myApiKey}`;
-        fetch(fetchUrl)
+        await fetch(fetchUrl)
         .then(response => {
             console.log(`response status: ${response.status}`);
             return response.json();
@@ -22,7 +22,7 @@ function Catalogue() {
         .then(result => setData(result));
     }
 
-    const displayBooks = () => {
+    const processBooks = () => {
         // process the data returned from api
         if (data.items) {
             console.log(`total no. of items found: ${data.totalItems}`);
@@ -38,16 +38,19 @@ function Catalogue() {
                 };
             });
             setBooks(processedBooks);
+            console.log('processing books: success');
         } else {
-            setBooks([])
+            setBooks([]);
+            console.log('processing books: error');
         }
+    }
 
+    const displayBooks = () => {
         books.forEach(book => {
-            // console.log(`title of book: ${book.title}`);
-            // console.log(`author(s) of book: ${book.authors}`);
-            // console.log(`published date of book: ${book.publishedDate}`);
-            // console.log('\n');
-            console.log(book);
+            console.log(`title of book: ${book.title}`);
+            console.log(`author(s) of book: ${book.authors}`);
+            console.log(`published date of book: ${book.publishedDate}`);
+            console.log('\n');
         });
     }
 
@@ -56,6 +59,7 @@ function Catalogue() {
 
         <input type="text" className="form-control" placeholder="search for a book" ref={inputRef}/>
         <button onClick={handleClick}>search</button>
+        <button onClick={processBooks}>process the books</button>
         <button onClick={displayBooks}>display books</button>
     </div>
 }
