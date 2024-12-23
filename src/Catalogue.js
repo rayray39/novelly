@@ -1,11 +1,20 @@
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import Book from "./Book";
 
 function Catalogue() {
     const url = 'https://www.googleapis.com/books/v1/volumes?';
+    
 
-    const inputRef = useRef(null);
-    const [books, setBooks] = useState(null);
+    const inputRef = useRef(null);                      // references the text input
+    const [books, setBooks] = useState(null);           // holds the processed books (title, authors, publishedDate, description, image)
+    const [startIndex, setStartIndex] = useState(0)     // holds the start index for pagination
+    const maxResults = 10;
+
+    useEffect(() => {
+        if (startIndex >= 0) {
+            handleSearch();
+        }
+    }, [startIndex])
 
     const handleSearch = async () => {
         // get search query
@@ -18,7 +27,7 @@ function Catalogue() {
 
         try {
              // make get request to api
-            const fetchUrl = url + `q=${searchTerm}&key=${myApiKey}`;
+            const fetchUrl = url + `q=${searchTerm}&startIndex=${startIndex}&maxResults=${maxResults}&key=${myApiKey}`;
             const response = await fetch(fetchUrl);
             console.log(`status response from fetching Google API: ${response.status}`);
             if (!response.ok) {
@@ -64,6 +73,14 @@ function Catalogue() {
         }
     }
 
+    const handleNextPage = () => {
+        setStartIndex((prevIndex) => prevIndex + maxResults);
+    }
+
+    const handlePrevPage = () => {
+        setStartIndex((prevIndex) => Math.max(prevIndex - maxResults, 0));
+    }
+
     return <div id="catalogue-page">
         <h1 className="main-title-2">CATALOGUE</h1>
 
@@ -71,6 +88,11 @@ function Catalogue() {
         <button id="search-button" className="btn btn-success btn-block" onClick={handleSearch}>search</button>
 
         {books ? <Book books={books}/> : null}
+
+        <div className="pagination-buttons">
+            <button onClick={handlePrevPage}>Previous</button>
+            <button onClick={handleNextPage}>Next</button>
+        </div>
     </div>
 }
 

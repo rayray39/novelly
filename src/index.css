@@ -102,6 +102,12 @@ footer {
   padding: 20px;
   background-color: mintcream;
   border-radius: 20px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.pagination-buttons {
+  display: flex;
+  align-items: center;
 }
 
 /* Cursor */
