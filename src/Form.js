@@ -24,7 +24,7 @@ function Form() {
     }
 
     const PasswordError = () => {
-        const errorStyle = {fontSize: "12px", textAlign: "center", color: 'red'};
+        const errorStyle = {fontSize: "11px", textAlign: "center", color: 'red'};
         return <p style={errorStyle}>Your password should contain more than 6 characters!</p>
     }
 
@@ -71,17 +71,19 @@ function Form() {
     }
 
     return <div>
-        <form className="form" onSubmit={handleClick}>
-            <div className="form-group">
-                <label htmlFor="input-username" className="form-label">Username</label>
-                <input type="text" className="form-control" id="input-username" value={username} onChange={getUsername}/>
-            </div>
-            <div className="form-group">
-                <label htmlFor="" className="form-label">Password</label>
-                <input type="password" className="form-control" id="input-password" value={password} onChange={getPassword}/>
+        <form action="" onSubmit={handleClick}>
+            <fieldset>
+                <label htmlFor="">Username</label>
+                <input type="text" name="username" placeholder="Username" value={username} onChange={getUsername}/>
+
+                <label htmlFor="">Password</label>
+                <input type="password" name="password" placeholder="Password" value={password} onChange={getPassword}/>
                 {passwordTooShort ? <PasswordError /> : null}
-            </div>
-            <button id='sign-in-button' className="btn btn-success btn-block">Sign In</button>
+            </fieldset>
+            <input
+                type="submit"
+                value="Sign In"
+            />
         </form>
     </div>
 }

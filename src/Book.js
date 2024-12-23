@@ -4,7 +4,11 @@ function Book(props) {
         <li key={'title'} style={{fontSize:'20px', fontWeight:'bold'}}>{book.title}</li>
         <li key={'authors'}>{`Authors: ${book.authors}`}</li>
         <li key={'publishedDate'}>{`Published Date: ${book.publishedDate}`}</li>
-        <li key={'description'}>{`Description: ${book.description}`}</li>
+        {/* <li key={'description'}>{`Description: ${book.description}`}</li> */}
+        <details>
+            <summary>See description</summary>
+            <p>{book.description}</p>
+        </details>
 
         <button className="btn btn-dark" style={{marginTop:"10px", fontFamily: "Georgia, 'Times New Roman', Times, serif"}}>Borrow</button>
     </ul>)
