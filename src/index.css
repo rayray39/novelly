@@ -108,6 +108,21 @@ footer {
 .pagination-buttons {
   display: flex;
   align-items: center;
+  margin-bottom: 40px;
+  margin-top: 20px;
+}
+
+.btn-primary {
+  background-color: green;
+  border: 1px solid green;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.btn-primary:hover {
+  background-color: darkgreen;
+  border: 1px solid darkgreen;
 }
 
 /* Cursor */

@@ -3,7 +3,7 @@ import Book from "./Book";
 
 function Catalogue() {
     const url = 'https://www.googleapis.com/books/v1/volumes?';
-    
+    const myApiKey = 'AIzaSyC7TkKEezr_ujGF7HtKOnu6ltnQcoHn9YM';
 
     const inputRef = useRef(null);                      // references the text input
     const [books, setBooks] = useState(null);           // holds the processed books (title, authors, publishedDate, description, image)
@@ -81,6 +81,13 @@ function Catalogue() {
         setStartIndex((prevIndex) => Math.max(prevIndex - maxResults, 0));
     }
 
+    const PaginationButtons = () => {
+        return <div className="pagination-buttons">
+            <button className="btn btn-primary" onClick={handlePrevPage}>Previous</button>
+            <button className="btn btn-primary" onClick={handleNextPage}>Next</button>
+        </div>
+    }
+
     return <div id="catalogue-page">
         <h1 className="main-title-2">CATALOGUE</h1>
 
@@ -89,10 +96,7 @@ function Catalogue() {
 
         {books ? <Book books={books}/> : null}
 
-        <div className="pagination-buttons">
-            <button onClick={handlePrevPage}>Previous</button>
-            <button onClick={handleNextPage}>Next</button>
-        </div>
+        {books ? <PaginationButtons /> : null}
     </div>
 }
 
