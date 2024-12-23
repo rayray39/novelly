@@ -5,6 +5,8 @@ function Book(props) {
         <li key={'authors'}>{`Authors: ${book.authors}`}</li>
         <li key={'publishedDate'}>{`Published Date: ${book.publishedDate}`}</li>
         <li key={'description'}>{`Description: ${book.description}`}</li>
+
+        <button className="btn btn-dark" style={{marginTop:"10px", fontFamily: "Georgia, 'Times New Roman', Times, serif"}}>Borrow</button>
     </ul>)
 
     return <div className="books-page">
