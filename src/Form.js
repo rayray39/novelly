@@ -5,7 +5,7 @@ import users from './data/users.json';
 function Form() {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
-    const [passwordTooShort, setPasswordTooShort] = useState(false);
+    const [passwordIncorrect, setPasswordIncorrect] = useState(false);
     const navigate = useNavigate();
 
     const clearInputFields = () => {
@@ -19,13 +19,9 @@ function Form() {
         return username.length === 0 || password.length === 0;
     }
 
-    const isPasswordTooShort = () => {
-        return password.length > 0 && password.length <= 6;
-    }
-
     const PasswordError = () => {
         const errorStyle = {fontSize: "11px", textAlign: "center", color: 'red'};
-        return <p style={errorStyle}>Your password should contain more than 6 characters!</p>
+        return <p style={errorStyle}>Your password is incorrect!</p>
     }
 
     const handleClick = (e) => {
@@ -34,12 +30,6 @@ function Form() {
         if (isEmptyFields()) {
             alert('Please fill in all the fields!');
             return;
-        }
-        if (isPasswordTooShort()) {
-            setPasswordTooShort(true);
-            return;
-        } else {
-            setPasswordTooShort(false);
         }
 
         const loggedInUser = users.find((user) =>
@@ -55,7 +45,8 @@ function Form() {
                 navigate('/admin-page');
             }
         } else {
-            alert("Incorrect user credentials!");
+            setPasswordIncorrect(true);
+            // alert("Incorrect user credentials!");
             return;
         }
 
@@ -77,8 +68,8 @@ function Form() {
                 <input type="text" name="username" placeholder="Username" value={username} onChange={getUsername}/>
 
                 <label htmlFor="">Password</label>
-                <input type="password" name="password" placeholder="Password" value={password} onChange={getPassword}/>
-                {passwordTooShort ? <PasswordError /> : null}
+                <input type="password" name="password" aria-describedby="invalid-helper" aria-invalid={passwordIncorrect ? true : null} placeholder="Password" value={password} onChange={getPassword}/>
+                {passwordIncorrect ? <small id="invalid-helper">Your password is incorrect!</small> : null}
             </fieldset>
             <input
                 type="submit"
