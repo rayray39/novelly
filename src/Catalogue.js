@@ -3,7 +3,7 @@ import Book from "./Book";
 
 function Catalogue() {
     const url = 'https://www.googleapis.com/books/v1/volumes?';
-    const myApiKey = 'AIzaSyC7TkKEezr_ujGF7HtKOnu6ltnQcoHn9YM';
+    
 
     const inputRef = useRef(null);                      // references the text input
     const [books, setBooks] = useState(null);           // holds the processed books (title, authors, publishedDate, description, image)
@@ -11,6 +11,7 @@ function Catalogue() {
     const maxResults = 10;
 
     useEffect(() => {
+        // everytime startIndex changes (go to a prev/next page), perform a fetch
         if (startIndex >= 0) {
             handleSearch();
         }
@@ -74,10 +75,12 @@ function Catalogue() {
     }
 
     const handleNextPage = () => {
+        // update startIndex to the next page.
         setStartIndex((prevIndex) => prevIndex + maxResults);
     }
 
     const handlePrevPage = () => {
+        // update startIndex to the previous page.
         setStartIndex((prevIndex) => Math.max(prevIndex - maxResults, 0));
     }
 
