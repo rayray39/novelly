@@ -112,17 +112,10 @@ footer {
   margin-top: 20px;
 }
 
-.btn-primary {
-  background-color: green;
-  border: 1px solid green;
+.btn-success {
   margin: 10px;
   padding: 10px;
   border-radius: 8px;
-}
-
-.btn-primary:hover {
-  background-color: darkgreen;
-  border: 1px solid darkgreen;
 }
 
 /* Cursor */

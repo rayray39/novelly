@@ -77,17 +77,25 @@ function Catalogue() {
     const handleNextPage = () => {
         // update startIndex to the next page.
         setStartIndex((prevIndex) => prevIndex + maxResults);
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
     }
 
     const handlePrevPage = () => {
         // update startIndex to the previous page.
         setStartIndex((prevIndex) => Math.max(prevIndex - maxResults, 0));
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
     }
 
     const PaginationButtons = () => {
         return <div className="pagination-buttons">
-            <button className="btn btn-primary" onClick={handlePrevPage}>Previous</button>
-            <button className="btn btn-primary" onClick={handleNextPage}>Next</button>
+            <button className="btn btn-success" onClick={handlePrevPage} disabled={startIndex === 0}>Previous</button>
+            <button className="btn btn-success" onClick={handleNextPage}>Next</button>
         </div>
     }
 
