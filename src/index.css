@@ -36,7 +36,12 @@ code {
   font-weight: 900;
 }
 
-#searchbar {
+#search-bar {
+  width: 600px;
+}
+
+#search-button {
+  margin-bottom: 20px;
   width: 600px;
 }
 
@@ -58,35 +63,6 @@ footer {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
-
-.typewriter {
-  margin-bottom: 30px;
-  font-size: 60px;
-  letter-spacing: 4px;
-  font-family: Georgia, 'Times New Roman', Times, serif;
-  font-weight: 900;
-}
-
-.form-control {
-  font-size: 16px;
-  width: 300px;
-  border-radius: 10px;
-  font-family: Georgia, 'Times New Roman', Times, serif;
-}
-
-#sign-in-button {
-  margin-top: 10px;
-  border-radius: 10px;
-  font-family: Georgia, 'Times New Roman', Times, serif;
-}
-
-#search-button {
-  margin-top: 10px;
-  border-radius: 10px;
-  font-family: Georgia, 'Times New Roman', Times, serif;
-  width: 600px;
-  margin-bottom: 40px;
 }
 
 .books-card-display {

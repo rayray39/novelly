@@ -102,8 +102,8 @@ function Catalogue() {
     return <div id="catalogue-page">
         <h1 className="main-title-2">CATALOGUE</h1>
 
-        <input id="searchbar" type="text" className="form-control" placeholder="search for a book" ref={inputRef}/>
-        <button id="search-button" className="btn btn-success btn-block" onClick={handleSearch}>search</button>
+        <input id="search-bar" type="text" placeholder="Search for a book" ref={inputRef}/>
+        <button id="search-button" onClick={handleSearch}>Search</button>
 
         {books ? <Book books={books}/> : null}
 
