@@ -45,6 +45,11 @@ code {
   width: 600px;
 }
 
+#borrow-button {
+  background-color: black;
+  border: none;
+}
+
 footer {
   text-align: center;
   position: absolute;
@@ -70,6 +75,7 @@ footer {
   flex-direction: column;
   align-items: center;
   list-style-type: none;
+  color: black;
   margin: 0;
   padding: 0;
   width: 700px;
@@ -79,6 +85,10 @@ footer {
   background-color: mintcream;
   border-radius: 20px;
   font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.books-card-display > p {
+  color: black;
 }
 
 .pagination-buttons {
