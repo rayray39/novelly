@@ -94,8 +94,8 @@ function Catalogue() {
 
     const PaginationButtons = () => {
         return <div className="pagination-buttons">
-            <button className="btn btn-success" onClick={handlePrevPage} disabled={startIndex === 0}>Previous</button>
-            <button className="btn btn-success" onClick={handleNextPage}>Next</button>
+            <button className="pico-background-violet-650" onClick={handlePrevPage} disabled={startIndex === 0}>Previous</button>
+            <button className="pico-background-violet-650" onClick={handleNextPage}>Next</button>
         </div>
     }
 
@@ -103,7 +103,7 @@ function Catalogue() {
         <h1 className="main-title-2">CATALOGUE</h1>
 
         <input id="search-bar" type="text" placeholder="Search for a book" ref={inputRef}/>
-        <button id="search-button" onClick={handleSearch}>Search</button>
+        <button id="search-button" className="pico-background-violet-650" onClick={handleSearch}>Search</button>
 
         {books ? <Book books={books}/> : null}
 

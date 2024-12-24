@@ -43,6 +43,7 @@ code {
 #search-button {
   margin-bottom: 20px;
   width: 600px;
+  border: none;
 }
 
 #borrow-button {
@@ -96,6 +97,11 @@ footer {
   align-items: center;
   margin-bottom: 40px;
   margin-top: 20px;
+}
+
+.pagination-buttons > button {
+  border: none;
+  margin: 10px;
 }
 
 .btn-success {

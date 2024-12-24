@@ -74,6 +74,8 @@ function Form() {
             <input
                 type="submit"
                 value="Sign In"
+                className="pico-background-violet-650"
+                style={{border:'none'}}
             />
         </form>
     </div>
