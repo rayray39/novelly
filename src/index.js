@@ -7,6 +7,7 @@ import Body from './Body';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Catalogue from './Catalogue';
 import AdminPage from './AdminPage';
+import Borrowed from './Borrowed';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -25,6 +26,7 @@ function MainApp() {
     <Routes>
       <Route path='/' element={<LoginPage/>} />
       <Route path='/catalogue' element={<Catalogue/>} />
+      <Route path='/borrowed' element={<Borrowed/>} />
       <Route path='/admin-page' element={<AdminPage/>} />
     </Routes>
   </BrowserRouter>
