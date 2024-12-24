@@ -1,11 +1,11 @@
 import { useRef, useState, useEffect } from "react";
 import Book from "./Book";
+import TopNavBar from "./TopNavBar";
 
 // catalogue page which shows search bar and button for fetching books.
 
 function Catalogue() {
     const url = 'https://www.googleapis.com/books/v1/volumes?';
-    
 
     const inputRef = useRef(null);                      // references the text input
     const [books, setBooks] = useState(null);           // holds the processed books (title, authors, publishedDate, description, image)
@@ -102,17 +102,7 @@ function Catalogue() {
     }
 
     return <div id="catalogue-page">
-        <nav id="top-nav-bar">
-            <ul>
-                <li><strong>NOVELLY</strong></li>
-            </ul>
-            <ul>
-                <li><a href="#" class="contrast">catalogue</a></li>
-                <li><a href="#" class="contrast">borrowed</a></li>
-                <li><a href="#" class="contrast">wish list</a></li>
-                <li><a href="#" class="contrast">account</a></li>
-            </ul>
-        </nav>
+        <TopNavBar />
 
         <h1 className="main-title-2">CATALOGUE</h1>
 
