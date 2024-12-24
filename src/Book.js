@@ -11,7 +11,10 @@ function Book(props) {
             <p>{book.description}</p>
         </details>
 
-        <button id="borrow-button" style={{marginTop:"10px", fontFamily: "Georgia, 'Times New Roman', Times, serif"}}>Borrow</button>
+        <div style={{display:'flex', marginTop:'5px'}}>
+            <button id="borrow-button" style={{marginTop:"10px", fontFamily: "Georgia, 'Times New Roman', Times, serif"}}>Borrow</button>
+            <button id="wishlist-button" style={{marginTop:"10px", fontFamily: "Georgia, 'Times New Roman', Times, serif"}}>Add to Wishlist</button>
+        </div>
     </div>)
 
     return <div className="books-page">

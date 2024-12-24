@@ -47,9 +47,10 @@ code {
   border: none;
 }
 
-#borrow-button {
+#borrow-button, #wishlist-button {
   background-color: black;
   border: none;
+  margin: 0px 5px 0px 5px;
 }
 
 footer {
