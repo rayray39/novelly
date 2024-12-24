@@ -92,17 +92,22 @@ footer {
   font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
-#main-body::after {
+#main-body::after, #main-body::before {
   content: '';
   position: absolute;
-  height: 102%;
-  width: 102%;
+  height: 101%;
+  width: 101%;
   z-index: -1;
   border-radius: 30px;
   background-image: conic-gradient(red, purple, blue, green, yellow, orange, red);
   top: 50%;
   left: 50%;
   translate: -50% -50%;
+}
+
+#main-body::before {
+  filter: blur(1.5rem);
+  opacity: 0.5;
 }
 
 .books-card-display > p {
