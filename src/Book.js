@@ -1,4 +1,4 @@
-
+// display all the fetch and processed books as an unordered list.
 
 function Book(props) {
     const listItems = props.books.map(book => <div className="books-card-display">

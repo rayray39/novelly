@@ -2,6 +2,8 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import users from './data/users.json';
 
+// main page when users log in. (after logged in, will be routed to catalogue)
+
 function Form() {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
