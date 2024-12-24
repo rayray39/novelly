@@ -102,6 +102,18 @@ function Catalogue() {
     }
 
     return <div id="catalogue-page">
+        <nav id="top-nav-bar">
+            <ul>
+                <li><strong>NOVELLY</strong></li>
+            </ul>
+            <ul>
+                <li><a href="#" class="contrast">catalogue</a></li>
+                <li><a href="#" class="contrast">borrowed</a></li>
+                <li><a href="#" class="contrast">wish list</a></li>
+                <li><a href="#" class="contrast">account</a></li>
+            </ul>
+        </nav>
+
         <h1 className="main-title-2">CATALOGUE</h1>
 
         <input id="search-bar" type="text" placeholder="Search for a book" ref={inputRef}/>
