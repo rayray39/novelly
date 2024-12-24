@@ -20,7 +20,7 @@ code {
   font-weight: 900;
 }
 
-#catalogue-page {
+.route-page {
   display: flex;
   flex-direction: column;
   align-items: center;

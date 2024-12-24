@@ -67,7 +67,7 @@ function Form() {
         <form action="" onSubmit={handleClick}>
             <fieldset>
                 <label htmlFor="">Username</label>
-                <input type="text" name="username" placeholder="Username" value={username} onChange={getUsername}/>
+                <input type="text" name="username" placeholder="Username" value={username} onChange={getUsername} autoFocus/>
 
                 <label htmlFor="">Password</label>
                 <input type="password" name="password" aria-describedby="invalid-helper" aria-invalid={passwordIncorrect ? true : null} placeholder="Password" value={password} onChange={getPassword}/>

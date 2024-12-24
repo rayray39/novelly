@@ -102,7 +102,7 @@ function Catalogue() {
         </div>
     }
 
-    return <div id="catalogue-page">
+    return <div id="catalogue-page" className="route-page">
         <TopNavBar />
 
         <h1 className="main-title-2">CATALOGUE</h1>
