@@ -9,6 +9,7 @@ import Catalogue from './Catalogue';
 import AdminPage from './AdminPage';
 import Borrowed from './Borrowed';
 import Wishlist from './Wishlist';
+import Account from './Account';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -29,6 +30,7 @@ function MainApp() {
       <Route path='/catalogue' element={<Catalogue/>} />
       <Route path='/borrowed' element={<Borrowed/>} />
       <Route path='/wishlist' element={<Wishlist/>} />
+      <Route path='/account' element={<Account/>} />
       <Route path='/admin-page' element={<AdminPage/>} />
     </Routes>
   </BrowserRouter>
