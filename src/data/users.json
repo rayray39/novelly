@@ -2,7 +2,8 @@
     {
         "username": "gwen",
         "password": "password123",
-        "role": "user"
+        "role": "user",
+        "borrowed_books": []
     },
     {
         "username": "benny",
