@@ -4,9 +4,13 @@ const express = require('express')              // create server and use for def
 const fs = require('fs');                       // for file reading and writing (json files).
 const bodyParser = require('body-parser');      // middleware to parse json requests.
 const path = require('path');                   // to work with file and directories.
+const cors = require('cors');
 
 const app = express();
 const PORT = 5000;
+
+// middleware for CORS (cross origin resource sharing)
+app.use(cors());
 
 // middleware to handle incoming http requests with JSON data.
 app.use(bodyParser.json());
