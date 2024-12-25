@@ -10,6 +10,7 @@ import AdminPage from './AdminPage';
 import Borrowed from './Borrowed';
 import Wishlist from './Wishlist';
 import Account from './Account';
+import { UserProvider } from './UserContext';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -37,7 +38,9 @@ function MainApp() {
 }
 
 root.render(
-  <MainApp />
+  <UserProvider>
+    <MainApp />
+  </UserProvider>
 );
 
 // If you want to start measuring performance in your app, pass a function

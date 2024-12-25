@@ -1,8 +1,13 @@
+import { useUser } from "./UserContext";
+
 // display all the fetch and processed books as an unordered list.
 
 function Book(props) {
+    const { currentUser } = useUser(); // Access currently logged in user.
+
     const handleBorrow = (bookId) => {
         console.log(`this book has been borrowed: ${bookId}`);
+        console.log(`currently logged in user: ${currentUser.username}`)
     }
 
     const listItems = props.books.map(book => <div className="books-card-display" key={book.id}>
