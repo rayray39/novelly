@@ -6,7 +6,7 @@ import usersData from './data/users.json';
 
 function Book(props) {
     const { currentUser } = useUser(); // Access currently logged in user.
-    const [users, setUsers] = useState(usersData);
+    const [users] = useState(usersData);
 
     const handleBorrow = (book) => {
         console.log(`ID of borrowed book: ${book.id}`);
@@ -15,19 +15,20 @@ function Book(props) {
         addBorrowedBook(book);
     }
 
-    const addBorrowedBook = (borrowedBook) => {
+    const addBorrowedBook = async (borrowedBook) => {
         // adds the borrowedBook into the borrowed_books list of currently logged in user.
-        setUsers((prevUsers) => {
-            return prevUsers.map((user) => {
-                if (user.username === currentUser.username) {
-                    // Add the borrowed_books field if it doesn't exist
-                    const updatedBorrowedBooks = [...(user.borrowed_books || []), borrowedBook];
-                    console.log(`Successfully borrowed: ${borrowedBook.title}`);
-                    return { ...user, borrowed_books: updatedBorrowedBooks };
-                }
-                return user;
-            })
-        })
+        try {
+            const repsonse = await fetch('http://localhost:5000/borrow-book', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ username: currentUser.username, borrowedBook }),
+            });
+
+            const data = await repsonse.json();
+            console.log(data.message);
+        } catch (error) {
+            console.error(`Error in borrowing book: ${error}`)
+        }
     }
 
     const getBorrowedBooks = () => {
