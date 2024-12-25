@@ -16,6 +16,7 @@ function Book(props) {
     }
 
     const addBorrowedBook = (borrowedBook) => {
+        // adds the borrowedBook into the borrowed_books list of currently logged in user.
         setUsers((prevUsers) => {
             return prevUsers.map((user) => {
                 if (user.username === currentUser.username) {
