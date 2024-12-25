@@ -7,7 +7,6 @@ import TopNavBar from "./TopNavBar";
 function Catalogue() {
     const url = 'https://www.googleapis.com/books/v1/volumes?';
     
-
     const inputRef = useRef(null);                      // references the text input
     const [books, setBooks] = useState(null);           // holds the processed books (title, authors, publishedDate, description, image)
     const [startIndex, setStartIndex] = useState(0)     // holds the start index for pagination
@@ -48,7 +47,7 @@ function Catalogue() {
                     const volumeInfo = item.volumeInfo;
 
                     return {
-                        id: volumeInfo.id,
+                        id: item.id,
                         title: volumeInfo.title || "No Title Available",
                         authors: volumeInfo.authors || ["Unknown Author"],
                         publishedDate: volumeInfo.publishedDate || "Unknown Date",
@@ -63,8 +62,7 @@ function Catalogue() {
                 // display the books information.
                 processedBooks.forEach(book => {
                     console.log(`title of book: ${book.title}`);
-                    console.log(`author(s) of book: ${book.authors}`);
-                    console.log(`published date of book: ${book.publishedDate}`);
+                    console.log(`id of book: ${book.id}`);
                     console.log('\n');
                 });
             } else {

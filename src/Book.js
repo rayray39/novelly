@@ -1,8 +1,12 @@
 // display all the fetch and processed books as an unordered list.
 
 function Book(props) {
-    const listItems = props.books.map(book => <div className="books-card-display">
-        <p><img src={book.image} alt="image of book" /></p>
+    const handleBorrow = (bookId) => {
+        console.log(`this book has been borrowed: ${bookId}`);
+    }
+
+    const listItems = props.books.map(book => <div className="books-card-display" key={book.id}>
+        <p><img src={book.image} alt="cover page of book" /></p>
         <p>{book.title}</p>
         <p>{`Authors: ${book.authors}`}</p>
         <p>{`Published Date: ${book.publishedDate}`}</p>
@@ -12,7 +16,7 @@ function Book(props) {
         </details>
 
         <div style={{display:'flex', marginTop:'5px'}}>
-            <button id="borrow-button" style={{marginTop:"10px", fontFamily: "Georgia, 'Times New Roman', Times, serif"}}>Borrow</button>
+            <button id="borrow-button" onClick={() => handleBorrow(book.id)} style={{marginTop:"10px", fontFamily: "Georgia, 'Times New Roman', Times, serif"}}>Borrow</button>
             <button id="wishlist-button" style={{marginTop:"10px", fontFamily: "Georgia, 'Times New Roman', Times, serif"}}>Add to Wishlist</button>
         </div>
     </div>)
