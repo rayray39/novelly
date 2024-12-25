@@ -47,6 +47,19 @@ app.post('/borrow-book', (req, res) => {
     return res.status(200).json({ message: `Successfully borrowed: ${borrowedBook.title}`, user }); // res is info sent from server (backend) back to client (frontend)
 });
 
+// get borrowed books endpoint (GET method)
+app.get('/borrowed-books/:username', (req, res) => {
+    const username = req.params.username;
+    const users = readUsers();
+    const user = users.find((user) => user.username === username);
+
+    if (!user) {
+        return res.status(404).json({ error: 'User not found.' });
+    }
+
+    return res.status(200).json({ borrowed_books: user.borrowed_books || [] });
+})
+
 // Start the server
 app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);

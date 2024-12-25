@@ -31,12 +31,24 @@ function Book(props) {
         }
     }
 
-    const getBorrowedBooks = () => {
+    const getBorrowedBooks = async () => {
         // test function to get borrowed books of currently logged in user.
-        const user = users.find((user) => user.username === currentUser.username);
-        user.borrowed_books.forEach(borrowedBook => {
-            console.log(borrowedBook.title);
-        });
+        console.log(`getting borrowed books of: ${currentUser.username}`)
+        try {
+            const response = await fetch(`http://localhost:5000/borrowed-books/${currentUser.username}`, {
+                method: 'GET',
+            })
+            if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+            const data = await response.json();
+            console.log(`Borrowed books: ${data.borrowed_books}`);
+            data.borrowed_books.forEach(book => {
+                console.log(book.title);
+            });
+        } catch (error) {
+            console.error('Error fetching borrowed books:', error);
+        }
     }
 
     const listItems = props.books.map(book => <div className="books-card-display" key={book.id}>
