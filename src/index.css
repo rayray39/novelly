@@ -47,10 +47,11 @@ code {
   border: none;
 }
 
-#borrow-button, #wishlist-button {
+#borrow-button, #wishlist-button, #return-button {
   background-color: black;
   border: none;
-  margin: 0px 5px 0px 5px;
+  margin: 10px 5px 0px 5px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 footer {
@@ -91,6 +92,10 @@ footer {
   background-color: mintcream;
   border-radius: 20px;
   font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.borrowed-books-page {
+  margin-top: 40px;
 }
 
 #main-body::after, #main-body::before {

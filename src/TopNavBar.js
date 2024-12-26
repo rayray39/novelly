@@ -1,6 +1,9 @@
 import { Link } from "react-router-dom";
+import { useUser } from "./UserContext";
 
 function TopNavBar() {
+    const {currentUser} = useUser();
+
     return <>
         <nav id="top-nav-bar">
             <ul>

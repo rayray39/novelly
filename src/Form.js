@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import users from './data/users.json';
+import { useUser } from "./UserContext";
 
 // main page when users log in. (after logged in, will be routed to catalogue)
 
@@ -9,6 +10,7 @@ function Form() {
     const [password, setPassword] = useState('');
     const [passwordIncorrect, setPasswordIncorrect] = useState(false);
     const navigate = useNavigate();
+    const {currentUser, setCurrentUser} = useUser();
 
     const clearInputFields = () => {
         console.log(`username: ${username}`);
@@ -52,6 +54,7 @@ function Form() {
             return;
         }
 
+        setCurrentUser(loggedInUser);
         clearInputFields();
     }
 

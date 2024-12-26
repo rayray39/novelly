@@ -48,7 +48,7 @@ function Catalogue() {
                     const volumeInfo = item.volumeInfo;
 
                     return {
-                        id: volumeInfo.id,
+                        id: item.id,
                         title: volumeInfo.title || "No Title Available",
                         authors: volumeInfo.authors || ["Unknown Author"],
                         publishedDate: volumeInfo.publishedDate || "Unknown Date",
@@ -63,8 +63,7 @@ function Catalogue() {
                 // display the books information.
                 processedBooks.forEach(book => {
                     console.log(`title of book: ${book.title}`);
-                    console.log(`author(s) of book: ${book.authors}`);
-                    console.log(`published date of book: ${book.publishedDate}`);
+                    console.log(`id of book: ${book.id}`);
                     console.log('\n');
                 });
             } else {
