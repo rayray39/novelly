@@ -15,6 +15,13 @@ function Book(props) {
     const addBorrowedBook = async (borrowedBook) => {
         // adds the borrowedBook into the borrowed_books list of currently logged in user.
         // makes a POST request to server.
+        const currentBorrowedBooks = currentUser.borrowed_books;    // current list of borrowed books for logged in user.
+        const alreadyBorrowed = (book) => book.id === borrowedBook.id;
+        if (currentBorrowedBooks.some(alreadyBorrowed)) {
+            alert(`book already borrowed: ${borrowedBook.title}`);
+            console.log(`book already borrowed: ${borrowedBook.title}`)
+            return;
+        }
         try {
             const repsonse = await fetch('http://localhost:5000/borrow-book', {
                 method: 'POST',
