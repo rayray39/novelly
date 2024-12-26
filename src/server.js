@@ -60,6 +60,30 @@ app.get('/borrowed-books/:username', (req, res) => {
     return res.status(200).json({ borrowed_books: user.borrowed_books || [] });
 })
 
+// return a borrowed book endpoint (DELETE method)
+app.delete('/return-book/:username/:bookTitle', (req, res) => {
+    const username = req.params.username;
+    const bookTitle = req.params.bookTitle;
+
+    const users = readUsers();
+    const user = users.find((user) => user.username === username);
+    if (!user) {
+        return res.status(404).json({ error: 'User not found.' });
+    }
+
+    const returnBook = user.borrowed_books.find((book) => book.title === bookTitle);
+    if (!returnBook) {
+        return res.status(404).json({ error: 'Book title not found.' });
+    }
+
+    const bookIndex = user.borrowed_books.indexOf(returnBook);
+    const [removeReturnBook] = user.borrowed_books.splice(bookIndex, 1);
+
+    writeUsers(users);
+
+    return res.status(200).json({ message: `Successfully returned: ${removeReturnBook.title}`, user });
+})
+
 // Start the server
 app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);

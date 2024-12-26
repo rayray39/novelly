@@ -32,6 +32,19 @@ function Borrowed() {
         }
     }, [currentUser])
 
+    const handleReturnBook = async (bookTitle) => {
+        try {
+            const repsonse = await fetch(`http://localhost:5000/return-book/${currentUser.username}/${bookTitle}`, {
+                method: 'DELETE',
+            });
+
+            const data = await repsonse.json();
+            console.log(data.message);
+        } catch (error) {
+            console.error(`Error in returning book: ${error}`)
+        }
+    }
+
     const listItems = borrowedBooks.map((book) => <div className="books-card-display" key={book.id}>
         <p><img src={book.image} alt="cover page of book" /></p>
         <p>{book.title}</p>
@@ -42,7 +55,7 @@ function Borrowed() {
             <p>{book.description}</p>
         </details>
 
-        <button id="return-button">Return</button>
+        <button id="return-button" onClick={() => handleReturnBook(book.title)}>Return</button>
     </div>)
 
     return <div className="route-page" id="borrowed-page">
