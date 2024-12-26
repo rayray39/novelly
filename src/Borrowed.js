@@ -37,6 +37,10 @@ function Borrowed() {
             const repsonse = await fetch(`http://localhost:5000/return-book/${currentUser.username}/${bookTitle}`, {
                 method: 'DELETE',
             });
+            
+            setBorrowedBooks((prevBooks) =>
+                prevBooks.filter((book) => book.title !== bookTitle)
+            );
 
             const data = await repsonse.json();
             console.log(data.message);

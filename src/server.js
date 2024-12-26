@@ -76,10 +76,11 @@ app.delete('/return-book/:username/:bookTitle', (req, res) => {
         return res.status(404).json({ error: 'Book title not found.' });
     }
 
+    // remove the book from the list of borrowed_books
     const bookIndex = user.borrowed_books.indexOf(returnBook);
     const [removeReturnBook] = user.borrowed_books.splice(bookIndex, 1);
 
-    writeUsers(users);
+    writeUsers(users);  // update the users.json file.
 
     return res.status(200).json({ message: `Successfully returned: ${removeReturnBook.title}`, user });
 })
