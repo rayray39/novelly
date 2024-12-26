@@ -7,6 +7,7 @@ function Borrowed() {
     const {currentUser} = useUser();
 
     useEffect(() => {
+        // the logic will run when the component mounts and everytime the currentUser changes.
         const fetchBorrowedBooks = async () => {
             try {
                 const response = await fetch(`http://localhost:5000/borrowed-books/${currentUser.username}`, {
@@ -31,12 +32,22 @@ function Borrowed() {
         }
     }, [currentUser])
 
+    const listItems = borrowedBooks.map((book) => <div className="books-card-display" key={book.id}>
+        <p><img src={book.image} alt="cover page of book" /></p>
+        <p>{book.title}</p>
+        <p>{`Authors: ${book.authors}`}</p>
+        <p>{`Published Date: ${book.publishedDate}`}</p>
+        <details>
+            <summary>See description</summary>
+            <p>{book.description}</p>
+        </details>
+    </div>)
+
     return <div className="route-page" id="borrowed-page">
         <TopNavBar />
-        <h1>This is the borrowed books page</h1> 
 
-        <div>
-            {borrowedBooks.map((book) => <li key={book.id}>{book.title}</li>)}
+        <div className="borrowed-books-page">
+            <ul>{listItems}</ul>
         </div>
     </div>
 }
