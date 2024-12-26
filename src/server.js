@@ -44,7 +44,7 @@ app.post('/borrow-book', (req, res) => {
     if (user.borrowed_books.some((book) => book.id === borrowedBook.id)) {
         return res.status(400).json({ error: `borrowedBook: [${borrowedBook.title}] already borrowed.` });
     }
-    
+
     // add the borrowed book to this user's borrowed_books list.
     user.borrowed_books = [...(user.borrowed_books || []), borrowedBook];
     writeUsers(users);
@@ -65,9 +65,9 @@ app.get('/borrowed-books/:username', (req, res) => {
 })
 
 // return a borrowed book endpoint (DELETE method)
-app.delete('/return-book/:username/:bookTitle', (req, res) => {
+app.delete('/return-book/:username/:bookId', (req, res) => {
     const username = req.params.username;
-    const bookTitle = req.params.bookTitle;
+    const bookId = req.params.bookId;
 
     const users = readUsers();
     const user = users.find((user) => user.username === username);
@@ -75,7 +75,7 @@ app.delete('/return-book/:username/:bookTitle', (req, res) => {
         return res.status(404).json({ error: 'User not found.' });
     }
 
-    const returnBook = user.borrowed_books.find((book) => book.title === bookTitle);
+    const returnBook = user.borrowed_books.find((book) => book.id === bookId);
     if (!returnBook) {
         return res.status(404).json({ error: 'Book title not found.' });
     }

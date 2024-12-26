@@ -32,14 +32,15 @@ function Borrowed() {
         }
     }, [currentUser])
 
-    const handleReturnBook = async (bookTitle) => {
+    const handleReturnBook = async (bookId) => {
         try {
-            const repsonse = await fetch(`http://localhost:5000/return-book/${currentUser.username}/${bookTitle}`, {
+            const repsonse = await fetch(`http://localhost:5000/return-book/${currentUser.username}/${bookId}`, {
                 method: 'DELETE',
             });
             
+            // filter the books that do not have the bookId of the returning book.
             setBorrowedBooks((prevBooks) =>
-                prevBooks.filter((book) => book.title !== bookTitle)
+                prevBooks.filter((book) => book.id !== bookId)
             );
 
             const data = await repsonse.json();
@@ -59,7 +60,7 @@ function Borrowed() {
             <p>{book.description}</p>
         </details>
 
-        <button id="return-button" onClick={() => handleReturnBook(book.title)}>Return</button>
+        <button id="return-button" onClick={() => handleReturnBook(book.id)}>Return</button>
     </div>)
 
     return <div className="route-page" id="borrowed-page">
