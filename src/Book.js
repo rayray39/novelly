@@ -17,6 +17,7 @@ function Book(props) {
 
     const addBorrowedBook = async (borrowedBook) => {
         // adds the borrowedBook into the borrowed_books list of currently logged in user.
+        // makes a POST request to server.
         try {
             const repsonse = await fetch('http://localhost:5000/borrow-book', {
                 method: 'POST',
@@ -33,6 +34,7 @@ function Book(props) {
 
     const getBorrowedBooks = async () => {
         // test function to get borrowed books of currently logged in user.
+        // makes a GET request to server.
         console.log(`getting borrowed books of: ${currentUser.username}`)
         try {
             const response = await fetch(`http://localhost:5000/borrowed-books/${currentUser.username}`, {

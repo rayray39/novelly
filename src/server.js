@@ -41,7 +41,7 @@ app.post('/borrow-book', (req, res) => {
     if (!user) {
         return res.status(404).json({ error: 'User not found.' });
     }
-
+    // add the borrowed book to this user's borrowed_books list.
     user.borrowed_books = [...(user.borrowed_books || []), borrowedBook];
     writeUsers(users);
     return res.status(200).json({ message: `Successfully borrowed: ${borrowedBook.title}`, user }); // res is info sent from server (backend) back to client (frontend)
@@ -56,7 +56,7 @@ app.get('/borrowed-books/:username', (req, res) => {
     if (!user) {
         return res.status(404).json({ error: 'User not found.' });
     }
-
+    // get the books inside this user's borrowed_books list.
     return res.status(200).json({ borrowed_books: user.borrowed_books || [] });
 })
 
