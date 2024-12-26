@@ -6,7 +6,6 @@ import usersData from './data/users.json';
 
 function Book(props) {
     const { currentUser } = useUser(); // Access currently logged in user.
-    const [users] = useState(usersData);
 
     const handleBorrow = (book) => {
         console.log(`ID of borrowed book: ${book.id}`);
