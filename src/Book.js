@@ -10,6 +10,7 @@ function Book(props) {
         console.log(`title of borrowed book: ${book.title}`);
         console.log(`currently logged in user: ${currentUser.username}`)
         addBorrowedBook(book);
+        alert(`successfully borrowed: ${book.title}`);
     }
 
     const addBorrowedBook = async (borrowedBook) => {

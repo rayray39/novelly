@@ -50,6 +50,17 @@ function Borrowed() {
         }
     }
 
+    const getDueDate = () => {
+        const today = new Date();
+        const dueDate = new Date(today.getFullYear(), today.getMonth(), today.getDate()+21);
+        console.log(dueDate);
+        const date = dueDate.getDate();
+        const month = dueDate.getMonth() + 1;
+        const year = dueDate.getFullYear();
+        return `${date}-${month}-${year}`;
+    }
+    const dueDate = getDueDate();
+
     const listItems = borrowedBooks.map((book) => <div className="books-card-display" key={book.id}>
         <p><img src={book.image} alt="cover page of book" /></p>
         <p>{book.title}</p>
@@ -59,6 +70,8 @@ function Borrowed() {
             <summary>See description</summary>
             <p>{book.description}</p>
         </details>
+
+        <p style={{fontWeight:'bold'}}>Due date: {dueDate}</p>
 
         <button id="return-button" onClick={() => handleReturnBook(book.id)}>Return</button>
     </div>)
