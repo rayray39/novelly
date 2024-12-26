@@ -50,7 +50,8 @@ code {
 #borrow-button, #wishlist-button {
   background-color: black;
   border: none;
-  margin: 0px 5px 0px 5px;
+  margin: 10px 5px 0px 5px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 footer {

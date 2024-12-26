@@ -42,8 +42,8 @@ function Book(props) {
         </details>
 
         <div style={{display:'flex', marginTop:'5px'}}>
-            <button id="borrow-button" onClick={() => handleBorrow(book)} style={{marginTop:"10px", fontFamily: "Georgia, 'Times New Roman', Times, serif"}}>Borrow</button>
-            <button id="wishlist-button" style={{marginTop:"10px", fontFamily: "Georgia, 'Times New Roman', Times, serif"}}>Add to Wishlist</button>
+            <button id="borrow-button" onClick={() => handleBorrow(book)}>Borrow</button>
+            <button id="wishlist-button">Add to Wishlist</button>
         </div>
     </div>)
 
