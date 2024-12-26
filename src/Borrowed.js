@@ -41,6 +41,8 @@ function Borrowed() {
             <summary>See description</summary>
             <p>{book.description}</p>
         </details>
+
+        <button id="return-button">Return</button>
     </div>)
 
     return <div className="route-page" id="borrowed-page">

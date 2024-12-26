@@ -1,6 +1,4 @@
-import { useState } from "react";
 import { useUser } from "./UserContext";
-import usersData from './data/users.json';
 
 // display all the fetch and processed books as an unordered list.
 
