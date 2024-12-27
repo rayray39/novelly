@@ -37,6 +37,31 @@ function Book(props) {
         }
     }
 
+    const addToWishlist = async (wishlistBook) => {
+        // adds the wishlistBook into the wishlist list of currently logged in user.
+        // makes a POST request to server.
+        const currentWishlistBooks = currentUser.wishlist;    // current list of wishlist books for logged in user.
+        const alreadyInWishlist = (book) => book.id === wishlistBook.id;
+        if (currentWishlistBooks.some(alreadyInWishlist)) {
+            alert(`book already added to wishlist: ${wishlistBook.title}`);
+            console.log(`book already added to wishlist: ${wishlistBook.title}`)
+            return;
+        }
+        try {
+            const repsonse = await fetch('http://localhost:5000/add-to-wishlist', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ username: currentUser.username, wishlistBook }),
+            });
+
+            const data = await repsonse.json();
+            console.log(data.message);
+            alert(`successfully added to wishlist: ${wishlistBook.title}`);
+        } catch (error) {
+            console.error(`Error in adding to wishlist: ${error}`)
+        }
+    }
+
     const listItems = props.books.map(book => <div className="books-card-display" key={book.id}>
         <p><img src={book.image} alt="cover page of book" /></p>
         <p>{book.title}</p>
@@ -49,7 +74,7 @@ function Book(props) {
 
         <div style={{display:'flex', marginTop:'5px'}}>
             <button id="borrow-button" onClick={() => handleBorrow(book)}>Borrow</button>
-            <button id="wishlist-button">Add to Wishlist</button>
+            <button id="wishlist-button" onClick={() => addToWishlist(book)}>Add to Wishlist</button>
         </div>
     </div>)
 
