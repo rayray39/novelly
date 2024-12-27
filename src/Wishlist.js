@@ -38,7 +38,7 @@ function Wishlist() {
         console.log(`title of borrowed book: ${book.title}`);
         console.log(`currently logged in user: ${currentUser.username}`)
         addBorrowedBook(book);      // add book to borrowed list.
-        handleRemoveBook(book.id);  // remove book from wishlist.
+        // handleRemoveBook(book.id);  // remove book from wishlist.
     }
 
     const addBorrowedBook = async (borrowedBook) => {

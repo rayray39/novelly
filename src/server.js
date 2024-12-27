@@ -48,7 +48,7 @@ app.post('/borrow-book', (req, res) => {
         return res.status(400).json({ error: `borrowedBook: [${borrowedBook.title}] already borrowed.` });
     }
     if (user.wishlist.some((book) => book.id === borrowedBook.id)) {
-        // book was added to wishlist, remove it from wishlist.
+        // book was inside wishlist, remove it from wishlist when borrowed.
         const bookIndex = user.wishlist.indexOf(borrowedBook);
         const [removeWishlistBook] = user.wishlist.splice(bookIndex, 1);
     }
@@ -133,7 +133,12 @@ app.post('/add-to-wishlist', (req, res) => {
         return res.status(404).json({ error: 'User not found.' });
     }
     if (user.wishlist.some((book) => book.id === wishlistBook.id)) {
+        // book already inside wishlist.
         return res.status(400).json({ error: `wishlistBook: [${wishlistBook.title}] already added to wishlist.` });
+    }
+    if (user.borrowed_books.some((book) => book.id === wishlistBook.id)) {
+        // book already borrowed cannot be added into wishlist.
+        return res.status(400).json({ error: `borrowedBook: [${wishlistBook.title}] already borrowed.` });
     }
 
     // add the book to this user's wishlist.
