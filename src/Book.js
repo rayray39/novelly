@@ -10,7 +10,6 @@ function Book(props) {
         console.log(`title of borrowed book: ${book.title}`);
         console.log(`currently logged in user: ${currentUser.username}`)
         addBorrowedBook(book);
-        alert(`successfully borrowed: ${book.title}`);
     }
 
     const addBorrowedBook = async (borrowedBook) => {
@@ -32,6 +31,7 @@ function Book(props) {
 
             const data = await repsonse.json();
             console.log(data.message);
+            alert(`successfully borrowed: ${borrowedBook.title}`);
         } catch (error) {
             console.error(`Error in borrowing book: ${error}`)
         }
