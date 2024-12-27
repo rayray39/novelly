@@ -96,6 +96,71 @@ app.delete('/return-book/:username/:bookId', (req, res) => {
     return res.status(200).json({ message: `Successfully returned: ${removeReturnBook.title}`, user });
 })
 
+
+// get the books in this user's wishlist (GET method)
+app.get('/wishlist/:username', (req, res) => {
+    const username = req.params.username;
+    const users = readUsers();
+    const user = users.find((user) => user.username === username);
+
+    if (!user) {
+        return res.status(404).json({ error: 'User not found.' });
+    }
+    if (!user.wishlist) {
+        return res.status(404).json({ error: 'Wish list not found.' });
+    }
+
+    // get the books inside this user's wishlist.
+    return res.status(200).json({ wishlist: user.wishlist || [] });
+})
+
+// add the book to this user's wishlist (POST method)
+app.post('/add-to-wishlist', (req, res) => {
+    const { username, wishlistBook } = req.body;
+    const users = readUsers();
+    const user = users.find((user) => user.username === username);
+
+    if (!username || !wishlistBook) {
+        return res.status(404).json({ error: 'Username and wishlistBook are required.' });
+    }
+    if (!user) {
+        return res.status(404).json({ error: 'User not found.' });
+    }
+    if (user.wishlist.some((book) => book.id === wishlistBook.id)) {
+        return res.status(400).json({ error: `wishlistBook: [${wishlistBook.title}] already added to wishlist.` });
+    }
+
+    // add the book to this user's wishlist.
+    user.wishlist = [...(user.wishlist || []), wishlistBook];
+    writeUsers(users);
+    return res.status(200).json({ message: `Successfully added to wishlist: ${wishlistBook.title}`, user })
+})
+
+// remove a book from wishlist endpoint (DELETE method)
+app.delete('/remove-from-wishlist/:username/:bookId', (req, res) => {
+    const username = req.params.username;
+    const bookId = req.params.bookId;
+
+    const users = readUsers();
+    const user = users.find((user) => user.username === username);
+    if (!user) {
+        return res.status(404).json({ error: 'User not found.' });
+    }
+
+    const removeBook = user.wishlist.find((book) => book.id === bookId);
+    if (!removeBook) {
+        return res.status(404).json({ error: 'Book title not found.' });
+    }
+
+    // remove the book from the wishlist
+    const bookIndex = user.wishlist.indexOf(removeBook);
+    const [removeWishlistBook] = user.wishlist.splice(bookIndex, 1);
+
+    writeUsers(users);  // update the users.json file.
+    return res.status(200).json({ message: `Successfully returned: ${removeWishlistBook.title}`, user });
+})
+
+
 // Start the server
 app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);
