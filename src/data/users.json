@@ -29,14 +29,24 @@
     ],
     "wishlist": [
       {
-        "id": "DUA0DwAAQBAJ",
-        "title": "The Space Barons",
+        "id": "LgZbGuzl9d0C",
+        "title": "I, Woz",
         "authors": [
-          "Christian Davenport"
+          "Steve Wozniak"
         ],
-        "publishedDate": "2018-03-20",
-        "image": "http://books.google.com/books/content?id=DUA0DwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
-        "description": "The historic quest to rekindle the human exploration and colonization of space led by two rivals and their vast fortunes, egos, and visions of space as the next entrepreneurial frontier The Space Barons is the story of a group of billionaire entrepreneurs who are pouring their fortunes into the epic resurrection of the American space program. Nearly a half-century after Neil Armstrong walked on the moon, these Space Barons-most notably Elon Musk and Jeff Bezos, along with Richard Branson and Paul Allen-are using Silicon Valley-style innovation to dramatically lower the cost of space travel, and send humans even further than NASA has gone. These entrepreneurs have founded some of the biggest brands in the world-Amazon, Microsoft, Virgin, Tesla, PayPal-and upended industry after industry. Now they are pursuing the biggest disruption of all: space. Based on years of reporting and exclusive interviews with all four billionaires, this authoritative account is a dramatic tale of risk and high adventure, the birth of a new Space Age, fueled by some of the world's richest men as they struggle to end governments' monopoly on the cosmos. The Space Barons is also a story of rivalry-hard-charging startups warring with established contractors, and the personal clashes of the leaders of this new space movement, particularly Musk and Bezos, as they aim for the moon and Mars and beyond."
+        "publishedDate": "2013-05-09",
+        "image": "http://books.google.com/books/content?id=LgZbGuzl9d0C&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+        "description": "I, WOZ offers readers a unique glimpse into the offbeat and brilliant but ethical mind that conceived the Macintosh. After 25 years avoiding the public eye, Steve Wozniak reveals the full story of the Apple computer, from its conception to his views on the iconic cult status it has achieved today. In June 1975 Steve's curiosity and determination inspired him to build a computer, the first Apple. Six months later, he sold the machine, and for the self-professed 'engineer's engineer', success was imminent. But this story is full of life lessons, critical decisions, huge triumphs and big mistakes. Steve speaks also of his childhood, phone hacking pranks, working at Hewlett-Packard, the life-changing plane crash and teaching."
+      },
+      {
+        "id": "WopAuQEACAAJ",
+        "title": "Rocket Billionaires",
+        "authors": [
+          "Tim Fernholz"
+        ],
+        "publishedDate": "2019",
+        "image": "http://books.google.com/books/content?id=WopAuQEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+        "description": "Featured on NPR and PBS's SciTech Now, and in Fast Company, Forbes, and the Wall Street Journal The inside story of the new race to conquer space For the outsize personalities staking their fortunes on spaceships, the new race to explore space could be a dead end, a lucrative opportunity--or the key to humanity's survival. Elon Musk and Jeff Bezos take center stage in this fast-paced narrative as they attempt to disrupt the space economy and feed their own egos. We meet a supporting cast of equally fascinating entrepreneurs, from the irrepressible British mogul Richard Branson to the satellite internet visionary Greg Wyler. Tim Fernholz's fly-on-the-wall reporting captures an industry in the midst of disruption. NASA seeks to preserve its ambitious space program, traditional aerospace firms like Boeing and Lockheed Martin scramble to adapt to new competitors, lobbyists tussle over public funds, and lawmakers try to prevent this new space race from sparking global conflict. Fernholz spins this high-stakes marathon into a riveting tale of rivalry and survival."
       }
     ]
   },

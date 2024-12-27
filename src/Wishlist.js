@@ -34,7 +34,36 @@ function Wishlist() {
     }, [currentUser])
 
     const handleBorrow = (book) => {
-        return;
+        console.log(`ID of borrowed book: ${book.id}`);
+        console.log(`title of borrowed book: ${book.title}`);
+        console.log(`currently logged in user: ${currentUser.username}`)
+        addBorrowedBook(book);      // add book to borrowed list.
+        handleRemoveBook(book.id);  // remove book from wishlist.
+    }
+
+    const addBorrowedBook = async (borrowedBook) => {
+        // adds the borrowedBook into the borrowed_books list of currently logged in user.
+        // makes a POST request to server.
+        const currentBorrowedBooks = currentUser.borrowed_books;    // current list of borrowed books for logged in user.
+        const alreadyBorrowed = (book) => book.id === borrowedBook.id;
+        if (currentBorrowedBooks.some(alreadyBorrowed)) {
+            alert(`book already borrowed: ${borrowedBook.title}`);
+            console.log(`book already borrowed: ${borrowedBook.title}`)
+            return;
+        }
+        try {
+            const repsonse = await fetch('http://localhost:5000/borrow-book', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ username: currentUser.username, borrowedBook }),
+            });
+
+            const data = await repsonse.json();
+            console.log(data.message);
+            alert(`successfully borrowed: ${borrowedBook.title}`);
+        } catch (error) {
+            console.error(`Error in borrowing book: ${error}`)
+        }
     }
 
     const handleRemoveBook = async (bookId) => {
