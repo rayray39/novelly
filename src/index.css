@@ -47,7 +47,7 @@ code {
   border: none;
 }
 
-#borrow-button, #wishlist-button, #return-button {
+#borrow-button, #wishlist-button, #return-button, #remove-button {
   background-color: black;
   border: none;
   margin: 10px 5px 0px 5px;
@@ -94,7 +94,7 @@ footer {
   font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
-.borrowed-books-page {
+.borrowed-books-page, .wishlist-books-page {
   margin-top: 40px;
 }
 
