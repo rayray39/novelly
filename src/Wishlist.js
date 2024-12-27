@@ -37,8 +37,23 @@ function Wishlist() {
         return;
     }
 
-    const handleRemoveBook = () => {
-        return;
+    const handleRemoveBook = async (bookId) => {
+        // makes a DELETE request to the server to remove book from wishlist.
+        try {
+            const repsonse = await fetch(`http://localhost:5000/remove-from-wishlist/${currentUser.username}/${bookId}`, {
+                method: 'DELETE',
+            });
+            
+            // filter the books that do not have the bookId of the removing book.
+            setWishlistBooks((prevBooks) =>
+                prevBooks.filter((book) => book.id !== bookId)
+            );
+
+            const data = await repsonse.json();
+            console.log(data.message);
+        } catch (error) {
+            console.error(`Error in removing book from wishlist: ${error}`)
+        };
     }
 
     const listItems = wishlistBooks.map((book) => <div className="books-card-display" key={book.id}>
@@ -53,7 +68,7 @@ function Wishlist() {
 
         <div style={{display:'flex', marginTop:'5px'}}>
             <button id="borrow-button" onClick={() => handleBorrow(book)}>Borrow</button>
-            <button id="remove-button" onClick={() => handleRemoveBook()}>Remove</button>
+            <button id="remove-button" onClick={() => handleRemoveBook(book.id)}>Remove</button>
         </div>
     </div>)
 
