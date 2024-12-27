@@ -157,7 +157,7 @@ app.delete('/remove-from-wishlist/:username/:bookId', (req, res) => {
     const [removeWishlistBook] = user.wishlist.splice(bookIndex, 1);
 
     writeUsers(users);  // update the users.json file.
-    return res.status(200).json({ message: `Successfully returned: ${removeWishlistBook.title}`, user });
+    return res.status(200).json({ message: `Successfully removed: ${removeWishlistBook.title}`, user });
 })
 
 
