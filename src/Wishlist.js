@@ -61,7 +61,13 @@ function Wishlist() {
             });
 
             const data = await repsonse.json();
-            console.log(data.message);
+            
+            if (!repsonse.ok) {
+                const message = data.error;
+                alert(message);
+                return;
+            }
+
             alert(`successfully borrowed: ${borrowedBook.title}`);
         } catch (error) {
             console.error(`Error in borrowing book: ${error}`)
@@ -81,7 +87,14 @@ function Wishlist() {
             );
 
             const data = await repsonse.json();
-            console.log(data.message);
+            
+            if (!repsonse.ok) {
+                const message = data.error;
+                alert(message);
+                return;
+            }
+
+            alert(`successfully removed book!`)
         } catch (error) {
             console.error(`Error in removing book from wishlist: ${error}`)
         };

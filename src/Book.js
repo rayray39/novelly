@@ -66,7 +66,13 @@ function Book(props) {
             });
 
             const data = await repsonse.json();
-            console.log(data.message);
+
+            if (!repsonse.ok) {
+                const message = data.error;
+                alert(message);
+                return;
+            }
+            
             alert(`successfully added to wishlist: ${wishlistBook.title}`);
         } catch (error) {
             console.error(`Error in adding to wishlist: ${error}`)

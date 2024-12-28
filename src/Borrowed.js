@@ -46,8 +46,13 @@ function Borrowed() {
             );
 
             const data = await repsonse.json();
-            alert(`successfully returned book!`)
-            console.log(data.message);
+            if (!repsonse.ok) {
+                const message = data.error;
+                alert(message);
+                return;
+            }
+
+            alert(`successfully returned book!`);
         } catch (error) {
             console.error(`Error in returning book: ${error}`)
         }
