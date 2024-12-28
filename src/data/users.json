@@ -25,29 +25,18 @@
         "image": "http://books.google.com/books/content?id=LgZbGuzl9d0C&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
         "description": "I, WOZ offers readers a unique glimpse into the offbeat and brilliant but ethical mind that conceived the Macintosh. After 25 years avoiding the public eye, Steve Wozniak reveals the full story of the Apple computer, from its conception to his views on the iconic cult status it has achieved today. In June 1975 Steve's curiosity and determination inspired him to build a computer, the first Apple. Six months later, he sold the machine, and for the self-professed 'engineer's engineer', success was imminent. But this story is full of life lessons, critical decisions, huge triumphs and big mistakes. Steve speaks also of his childhood, phone hacking pranks, working at Hewlett-Packard, the life-changing plane crash and teaching.",
         "dueDate": "2025-01-18T10:08:15.860Z"
-      },
-      {
-        "id": "DUA0DwAAQBAJ",
-        "title": "The Space Barons",
-        "authors": [
-          "Christian Davenport"
-        ],
-        "publishedDate": "2018-03-20",
-        "image": "http://books.google.com/books/content?id=DUA0DwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
-        "description": "The historic quest to rekindle the human exploration and colonization of space led by two rivals and their vast fortunes, egos, and visions of space as the next entrepreneurial frontier The Space Barons is the story of a group of billionaire entrepreneurs who are pouring their fortunes into the epic resurrection of the American space program. Nearly a half-century after Neil Armstrong walked on the moon, these Space Barons-most notably Elon Musk and Jeff Bezos, along with Richard Branson and Paul Allen-are using Silicon Valley-style innovation to dramatically lower the cost of space travel, and send humans even further than NASA has gone. These entrepreneurs have founded some of the biggest brands in the world-Amazon, Microsoft, Virgin, Tesla, PayPal-and upended industry after industry. Now they are pursuing the biggest disruption of all: space. Based on years of reporting and exclusive interviews with all four billionaires, this authoritative account is a dramatic tale of risk and high adventure, the birth of a new Space Age, fueled by some of the world's richest men as they struggle to end governments' monopoly on the cosmos. The Space Barons is also a story of rivalry-hard-charging startups warring with established contractors, and the personal clashes of the leaders of this new space movement, particularly Musk and Bezos, as they aim for the moon and Mars and beyond.",
-        "dueDate": "2025-01-18T10:24:01.839Z"
       }
     ],
     "wishlist": [
       {
-        "id": "2miDHzlltK4C",
-        "title": "The Death and Life of Superman",
+        "id": "QHgVAAAACAAJ",
+        "title": "Punisher Max - Volume 1",
         "authors": [
-          "Roger Stern"
+          "Unknown Author"
         ],
-        "publishedDate": "1994-08",
-        "image": "http://books.google.com/books/content?id=2miDHzlltK4C&printsec=frontcover&img=1&zoom=1&source=gbs_api",
-        "description": "The events leading up to Superman's fatal battle with Doomsday and the strange events after Superman's death. The book was primarily adapted from the story serialized in comic books."
+        "publishedDate": "2007-08-15",
+        "image": "http://books.google.com/books/content?id=QHgVAAAACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+        "description": "\"Frank Castle's old associate Microchip is back, and he's after the Punisher.\"--Page 4 of cover."
       }
     ]
   },
