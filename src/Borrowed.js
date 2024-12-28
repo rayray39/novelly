@@ -46,7 +46,13 @@ function Borrowed() {
             );
 
             const data = await repsonse.json();
-            console.log(data.message);
+            if (!repsonse.ok) {
+                const message = data.error;
+                alert(message);
+                return;
+            }
+
+            alert(`successfully returned book!`);
         } catch (error) {
             console.error(`Error in returning book: ${error}`)
         }
@@ -78,6 +84,8 @@ function Borrowed() {
 
     return <div className="route-page" id="borrowed-page">
         <TopNavBar />
+
+        <h1 className="main-title-2">BORROWED BOOKS</h1>
 
         <div className="borrowed-books-page">
             <ul>{listItems}</ul>

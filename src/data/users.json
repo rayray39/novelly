@@ -5,26 +5,49 @@
     "role": "user",
     "borrowed_books": [
       {
-        "id": "SY3pEAAAQBAJ",
-        "title": "Kung Fu Panda 4 Movie Novel",
+        "id": "gNKIDQAAQBAJ",
+        "title": "DreamWorks Kung Fu Panda",
         "authors": [
-          "Unknown Author"
+          "Bill Scollon"
         ],
-        "publishedDate": "2024-03-12",
-        "image": "http://books.google.com/books/content?id=SY3pEAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
-        "description": "Kung Fu Panda 4 bursts into theaters on March 8, 2024! This movie novelization retells Po's and Zhen's epic adventures in the blockbuster film. It also features a quote book with Po's favorite sayings! Dumplings not included. Po is the Dragon Warrior, chosen by Master Oogway to wield the Staff of Wisdom. But when Master Shifu makes a shocking announcement—that Po must train his successor and assume the mantle of Spiritual Leader—Po isn’t sure he’s ready. He’s great at kicking butt, but sharing wisdom with the Valley of Peace? Not so much. But when an evil empress named The Chameleon seeks to open the Spirit Realm and steal the knowledge of kung fu masters, Po must find a way to stop her. Otherwise there may not be a world for the next Dragon Warrior to protect! This epic retelling of Kung Fu Panda 4 also contains 8 full-color pages of Po's favorite quotes, like \"But first, dumplings.\" DreamWorks Kung Fu Panda © 2024 DreamWorks Animation LLC. All Rights Reserved.",
-        "dueDate": "2025-01-17T06:14:01.644Z"
+        "publishedDate": "2017-07-25",
+        "image": "http://books.google.com/books/content?id=gNKIDQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+        "description": "DreamWorks’ Kung Fu Panda—finally retold in a Little Golden Book! For the first time ever, enjoy the story of Po and the Furious Five in this all-new Little Golden Book perfect for children ages 3 to 5 and fans of all ages! Po, an oversized panda with even bigger dreams, works in his father’s noodle shop. But when a twist of fate sets him on course to become the mighty Dragon Warrior, Po isn’t sure he can succeed—and neither is anyone else. A story about rising to the challenge and fulfilling your destiny, Kung Fu Panda is finally retold in a Little Golden Book!",
+        "dueDate": "2025-01-18T10:08:06.096Z"
       },
       {
-        "id": "5VYAAwAAQBAJ",
-        "title": "The Art of Thinking Clearly",
+        "id": "LgZbGuzl9d0C",
+        "title": "I, Woz",
         "authors": [
-          "Rolf Dobelli"
+          "Steve Wozniak"
         ],
-        "publishedDate": "2014-05-06",
-        "image": "http://books.google.com/books/content?id=5VYAAwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
-        "description": "A world-class thinker counts the 100 ways in which humans behave irrationally, showing us what we can do to recognize and minimize these “thinking errors” to make better decisions and have a better life Despite the best of intentions, humans are notoriously bad—that is, irrational—when it comes to making decisions and assessing risks and tradeoffs. Psychologists and neuroscientists refer to these distinctly human foibles, biases, and thinking traps as “cognitive errors.” Cognitive errors are systematic deviances from rationality, from optimized, logical, rational thinking and behavior. We make these errors all the time, in all sorts of situations, for problems big and small: whether to choose the apple or the cupcake; whether to keep retirement funds in the stock market when the Dow tanks, or whether to take the advice of a friend over a stranger. The “behavioral turn” in neuroscience and economics in the past twenty years has increased our understanding of how we think and how we make decisions. It shows how systematic errors mar our thinking and under which conditions our thought processes work best and worst. Evolutionary psychology delivers convincing theories about why our thinking is, in fact, marred. The neurosciences can pinpoint with increasing precision what exactly happens when we think clearly and when we don’t. Drawing on this wide body of research, The Art of Thinking Clearly is an entertaining presentation of these known systematic thinking errors--offering guidance and insight into everything why you shouldn’t accept a free drink to why you SHOULD walk out of a movie you don’t like it to why it’s so hard to predict the future to why shouldn’t watch the news. The book is organized into 100 short chapters, each covering a single cognitive error, bias, or heuristic. Examples of these concepts include: Reciprocity, Confirmation Bias, The It-Gets-Better-Before-It-Gets-Worse Trap, and the Man-With-A-Hammer Tendency. In engaging prose and with real-world examples and anecdotes, The Art of Thinking Clearly helps solve the puzzle of human reasoning.",
-        "dueDate": "2025-01-17T06:14:55.457Z"
+        "publishedDate": "2013-05-09",
+        "image": "http://books.google.com/books/content?id=LgZbGuzl9d0C&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+        "description": "I, WOZ offers readers a unique glimpse into the offbeat and brilliant but ethical mind that conceived the Macintosh. After 25 years avoiding the public eye, Steve Wozniak reveals the full story of the Apple computer, from its conception to his views on the iconic cult status it has achieved today. In June 1975 Steve's curiosity and determination inspired him to build a computer, the first Apple. Six months later, he sold the machine, and for the self-professed 'engineer's engineer', success was imminent. But this story is full of life lessons, critical decisions, huge triumphs and big mistakes. Steve speaks also of his childhood, phone hacking pranks, working at Hewlett-Packard, the life-changing plane crash and teaching.",
+        "dueDate": "2025-01-18T10:08:15.860Z"
+      },
+      {
+        "id": "DUA0DwAAQBAJ",
+        "title": "The Space Barons",
+        "authors": [
+          "Christian Davenport"
+        ],
+        "publishedDate": "2018-03-20",
+        "image": "http://books.google.com/books/content?id=DUA0DwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+        "description": "The historic quest to rekindle the human exploration and colonization of space led by two rivals and their vast fortunes, egos, and visions of space as the next entrepreneurial frontier The Space Barons is the story of a group of billionaire entrepreneurs who are pouring their fortunes into the epic resurrection of the American space program. Nearly a half-century after Neil Armstrong walked on the moon, these Space Barons-most notably Elon Musk and Jeff Bezos, along with Richard Branson and Paul Allen-are using Silicon Valley-style innovation to dramatically lower the cost of space travel, and send humans even further than NASA has gone. These entrepreneurs have founded some of the biggest brands in the world-Amazon, Microsoft, Virgin, Tesla, PayPal-and upended industry after industry. Now they are pursuing the biggest disruption of all: space. Based on years of reporting and exclusive interviews with all four billionaires, this authoritative account is a dramatic tale of risk and high adventure, the birth of a new Space Age, fueled by some of the world's richest men as they struggle to end governments' monopoly on the cosmos. The Space Barons is also a story of rivalry-hard-charging startups warring with established contractors, and the personal clashes of the leaders of this new space movement, particularly Musk and Bezos, as they aim for the moon and Mars and beyond.",
+        "dueDate": "2025-01-18T10:24:01.839Z"
+      }
+    ],
+    "wishlist": [
+      {
+        "id": "2miDHzlltK4C",
+        "title": "The Death and Life of Superman",
+        "authors": [
+          "Roger Stern"
+        ],
+        "publishedDate": "1994-08",
+        "image": "http://books.google.com/books/content?id=2miDHzlltK4C&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+        "description": "The events leading up to Superman's fatal battle with Doomsday and the strange events after Superman's death. The book was primarily adapted from the story serialized in comic books."
       }
     ]
   },
