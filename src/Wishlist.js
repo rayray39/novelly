@@ -114,8 +114,11 @@ function Wishlist() {
         </div>
     }
 
-    const handleNotes = () => {
-        setOpenNotes(!openNotes);
+    const handleNotes = (bookId) => {
+        setOpenNotes((prev) => ({
+            ...prev,
+            [bookId]: !prev[bookId]     // toggle specific book's state.
+        }))
     }
 
     const listItems = wishlistBooks.map((book) => <div className="books-card-display" key={book.id}>
@@ -131,10 +134,10 @@ function Wishlist() {
         <div style={{display:'flex', marginTop:'5px'}}>
             <button id="borrow-button" onClick={() => handleBorrow(book)}>Borrow</button>
             <button id="remove-button" onClick={() => handleRemoveBook(book.id)}>Remove</button>
-            <button id="add-notes-button" onClick={handleNotes}>Add notes</button>
+            <button id="add-notes-button" onClick={() => handleNotes(book.id)}>Add notes</button>
         </div>
 
-        {openNotes ? <Notes /> : null}
+        {openNotes[book.id] ? <Notes /> : null}
     </div>)
 
     return <div className="route-page" id="wishlist-page">
