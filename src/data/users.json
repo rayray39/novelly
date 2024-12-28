@@ -16,17 +16,6 @@
         "dueDate": "2025-01-18T10:08:06.096Z"
       },
       {
-        "id": "LgZbGuzl9d0C",
-        "title": "I, Woz",
-        "authors": [
-          "Steve Wozniak"
-        ],
-        "publishedDate": "2013-05-09",
-        "image": "http://books.google.com/books/content?id=LgZbGuzl9d0C&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
-        "description": "I, WOZ offers readers a unique glimpse into the offbeat and brilliant but ethical mind that conceived the Macintosh. After 25 years avoiding the public eye, Steve Wozniak reveals the full story of the Apple computer, from its conception to his views on the iconic cult status it has achieved today. In June 1975 Steve's curiosity and determination inspired him to build a computer, the first Apple. Six months later, he sold the machine, and for the self-professed 'engineer's engineer', success was imminent. But this story is full of life lessons, critical decisions, huge triumphs and big mistakes. Steve speaks also of his childhood, phone hacking pranks, working at Hewlett-Packard, the life-changing plane crash and teaching.",
-        "dueDate": "2025-01-18T10:08:15.860Z"
-      },
-      {
         "id": "DUA0DwAAQBAJ",
         "title": "The Space Barons",
         "authors": [
@@ -48,6 +37,16 @@
         "publishedDate": "1994-08",
         "image": "http://books.google.com/books/content?id=2miDHzlltK4C&printsec=frontcover&img=1&zoom=1&source=gbs_api",
         "description": "The events leading up to Superman's fatal battle with Doomsday and the strange events after Superman's death. The book was primarily adapted from the story serialized in comic books."
+      },
+      {
+        "id": "rMS6JFuLgx4C",
+        "title": "First Man",
+        "authors": [
+          "James R. Hansen"
+        ],
+        "publishedDate": "2012-11-27",
+        "image": "http://books.google.com/books/content?id=rMS6JFuLgx4C&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+        "description": "On July 20, 1969, the world stood still to watch American astronaut Neil A. Armstrong become the first person ever to step on the surface of another heavenly body. Upon his return to Earth, Armstrong was celebrated for his monumental achievement. He was also--as NASA historian Hansen reveals in this authorized biography--misunderstood. Armstrong's accomplishments as an engineer, a test pilot, and an astronaut have long been a matter of record, but Hansen's access to private documents and unpublished sources and his interviews with more than 125 subjects (including more than fifty hours with Armstrong himself) yield the first in-depth analysis of this elusive, reluctant hero."
       }
     ]
   },

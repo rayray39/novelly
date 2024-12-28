@@ -5,6 +5,7 @@ import { useUser } from "./UserContext";
 function Wishlist() {
     const [wishlistBooks, setWishlistBooks] = useState([]);
     const {currentUser} = useUser();
+    const [openNotes, setOpenNotes] = useState(false);
 
     useEffect(() => {
         // the logic will run when the component mounts and everytime the currentUser changes.
@@ -100,6 +101,23 @@ function Wishlist() {
         };
     }
 
+    const Notes = () => {
+        return <div style={{marginTop: "15px"}}>
+            <textarea
+                name="notes"
+                placeholder="Write a note..."
+                aria-label="Notes for a book"
+                cols='40'
+                autoFocus='true'
+                >
+            </textarea>
+        </div>
+    }
+
+    const handleNotes = () => {
+        setOpenNotes(!openNotes);
+    }
+
     const listItems = wishlistBooks.map((book) => <div className="books-card-display" key={book.id}>
         <p><img src={book.image} alt="cover page of book" /></p>
         <p>{book.title}</p>
@@ -113,7 +131,10 @@ function Wishlist() {
         <div style={{display:'flex', marginTop:'5px'}}>
             <button id="borrow-button" onClick={() => handleBorrow(book)}>Borrow</button>
             <button id="remove-button" onClick={() => handleRemoveBook(book.id)}>Remove</button>
+            <button id="add-notes-button" onClick={handleNotes}>Add notes</button>
         </div>
+
+        {openNotes ? <Notes /> : null}
     </div>)
 
     return <div className="route-page" id="wishlist-page">
