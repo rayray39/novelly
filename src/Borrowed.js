@@ -80,6 +80,8 @@ function Borrowed() {
     return <div className="route-page" id="borrowed-page">
         <TopNavBar />
 
+        <h1 className="main-title-2">BORROWED BOOKS</h1>
+
         <div className="borrowed-books-page">
             <ul>{listItems}</ul>
         </div>

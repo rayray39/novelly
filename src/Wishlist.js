@@ -105,6 +105,8 @@ function Wishlist() {
 
     return <div className="route-page" id="wishlist-page">
         <TopNavBar />
+
+        <h1 className="main-title-2">WISHLIST</h1>
         
         <div className="wishlist-books-page">
             <ul>{listItems}</ul>
