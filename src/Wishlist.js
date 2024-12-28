@@ -38,7 +38,9 @@ function Wishlist() {
         console.log(`title of borrowed book: ${book.title}`);
         console.log(`currently logged in user: ${currentUser.username}`)
         addBorrowedBook(book);      // add book to borrowed list.
-        // handleRemoveBook(book.id);  // remove book from wishlist.
+        setWishlistBooks((prevBooks) =>
+            prevBooks.filter((wishlistBook) => wishlistBook.id !== book.id)
+        );
     }
 
     const addBorrowedBook = async (borrowedBook) => {
