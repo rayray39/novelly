@@ -12,8 +12,15 @@ function Book(props) {
         addBorrowedBook(book);
     }
 
+    // when a book is borrowed from the wishlist page,
+    // 1. the book gets removed from the wishlist page (expected)
+    // 2. the book gets added into the borrowed page (expected)
+    //
+    // If the same book is being borrowed again through the catalogue, the 'successfully borrowed' msg appears.
+    // This means the currentUser.borrowed_books is not updated immediately and the check for book already borrowed
+    // is not done correctly.
     const addBorrowedBook = async (borrowedBook) => {
-        // adds the borrowedBook into the borrowed_books list of currently logged in user.
+        // adds the borrowedBook into the borrowed_books list of currently logged in user from catalogue.
         // makes a POST request to server.
         const currentBorrowedBooks = currentUser.borrowed_books;    // current list of borrowed books for logged in user.
         const alreadyBorrowed = (book) => book.id === borrowedBook.id;
@@ -30,7 +37,11 @@ function Book(props) {
             });
 
             const data = await repsonse.json();
-            console.log(data.message);
+            if (!repsonse.ok) {
+                const message = data.error;
+                alert(message);
+                return;
+            }
             alert(`successfully borrowed: ${borrowedBook.title}`);
         } catch (error) {
             console.error(`Error in borrowing book: ${error}`)

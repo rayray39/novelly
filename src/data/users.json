@@ -36,21 +36,20 @@
         "image": "http://books.google.com/books/content?id=DUA0DwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
         "description": "The historic quest to rekindle the human exploration and colonization of space led by two rivals and their vast fortunes, egos, and visions of space as the next entrepreneurial frontier The Space Barons is the story of a group of billionaire entrepreneurs who are pouring their fortunes into the epic resurrection of the American space program. Nearly a half-century after Neil Armstrong walked on the moon, these Space Barons-most notably Elon Musk and Jeff Bezos, along with Richard Branson and Paul Allen-are using Silicon Valley-style innovation to dramatically lower the cost of space travel, and send humans even further than NASA has gone. These entrepreneurs have founded some of the biggest brands in the world-Amazon, Microsoft, Virgin, Tesla, PayPal-and upended industry after industry. Now they are pursuing the biggest disruption of all: space. Based on years of reporting and exclusive interviews with all four billionaires, this authoritative account is a dramatic tale of risk and high adventure, the birth of a new Space Age, fueled by some of the world's richest men as they struggle to end governments' monopoly on the cosmos. The Space Barons is also a story of rivalry-hard-charging startups warring with established contractors, and the personal clashes of the leaders of this new space movement, particularly Musk and Bezos, as they aim for the moon and Mars and beyond.",
         "dueDate": "2025-01-18T10:24:01.839Z"
+      },
+      {
+        "id": "mZLmOylIc8cC",
+        "title": "Superman",
+        "authors": [
+          "Roger Stern"
+        ],
+        "publishedDate": "2004",
+        "image": "http://books.google.com/books/content?id=mZLmOylIc8cC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+        "description": "This captivating book brings together the most popular comic book heroes, including Superman, Batman, and Wonder Woman.",
+        "dueDate": "2025-01-18T11:17:18.928Z"
       }
     ],
-    "wishlist": [
-      {
-        "id": "VydBDR_aTgoC",
-        "title": "Batman Unauthorized",
-        "authors": [
-          "Dennis O'Neil",
-          "Leah Wilson"
-        ],
-        "publishedDate": "2008-02-09",
-        "image": "http://books.google.com/books/content?id=VydBDR_aTgoC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
-        "description": "Batman Unauthorized explores Batman's motivations and actions, as well as those of his foes. Batman is a creature of the night, more about vengeance than justice, more plagued by doubts than full of self-assurance, and more darkness than light. He has no superpowers, just skill, drive and a really well-made suit. One of the most recognized superheroes ever created, Batman has survived through campy TV shows and films, through actors such as Adam West, Michael Keaton and Christian Bale. Batman Unauthorized: Vigilantes, Jokers, and Heroes in Gotham City covers expansive territory ranging from the silly to the solemn. Why is the Joker so good at pushing Batman's buttons? What does Batman's technology say about the times? Why are Batman's villains crazier than average? And why is Batman the perfect, iconic American hero?"
-      }
-    ]
+    "wishlist": []
   },
   {
     "username": "benny",
