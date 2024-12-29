@@ -136,13 +136,17 @@ app.post('/add-to-wishlist', (req, res) => {
     if (!user) {
         return res.status(404).json({ error: 'User not found.' });
     }
-    if (Array.isArray(user.wishlist) && user.wishlist.some((book) => book.id === wishlistBook.id)) {
-        // book already inside wishlist.
-        return res.status(400).json({ error: `wishlistBook: [${wishlistBook.title}] already added to wishlist.` });
+    if (Array.isArray(user.wishlist)) {
+        if (user.wishlist.some((book) => book.id === wishlistBook.id)) {
+            // book already inside wishlist.
+            return res.status(400).json({ error: `wishlistBook: [${wishlistBook.title}] already added to wishlist.` });
+        }
     }
-    if (Array.isArray(user.borrowed_books) && user.borrowed_books.some((book) => book.id === wishlistBook.id)) {
-        // book already borrowed cannot be added into wishlist.
-        return res.status(400).json({ error: `borrowedBook: [${wishlistBook.title}] already borrowed.` });
+    if (Array.isArray(user.borrowed_books)) {
+        if (user.borrowed_books.some((book) => book.id === wishlistBook.id)) {
+            // book already borrowed cannot be added into wishlist.
+            return res.status(400).json({ error: `borrowedBook: [${wishlistBook.title}] already borrowed.` });
+        }   
     }
 
     // add the book to this user's wishlist.
