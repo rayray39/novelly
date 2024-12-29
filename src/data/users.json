@@ -54,5 +54,23 @@
     "username": "benny",
     "password": "safepassword",
     "role": "admin"
+  },
+  {
+    "username": "zoro",
+    "password": "password",
+    "role": "user",
+    "borrowed_books": [
+      {
+        "id": "8wYwvgAACAAJ",
+        "title": "One piece",
+        "authors": [
+          "Eiichiro Oda"
+        ],
+        "publishedDate": "2016-12",
+        "image": "http://books.google.com/books/content?id=8wYwvgAACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+        "description": "No Description Available",
+        "dueDate": "2025-01-19T13:23:58.008Z"
+      }
+    ]
   }
 ]

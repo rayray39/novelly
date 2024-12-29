@@ -17,7 +17,7 @@ function Book(props) {
         // makes a POST request to server.
         const currentBorrowedBooks = currentUser.borrowed_books;    // current list of borrowed books for logged in user.
         const alreadyBorrowed = (book) => book.id === borrowedBook.id;
-        if (currentBorrowedBooks.some(alreadyBorrowed)) {
+        if (Array.isArray(currentBorrowedBooks) && currentBorrowedBooks.some(alreadyBorrowed)) {
             alert(`book already borrowed: ${borrowedBook.title}`);
             console.log(`book already borrowed: ${borrowedBook.title}`)
             return;
