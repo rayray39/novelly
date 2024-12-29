@@ -52,7 +52,7 @@ app.post('/borrow-book', (req, res) => {
     if (Array.isArray(user.wishlist)) {     // check first if the wishlist array is present.
         if (user.wishlist.some((book) => book.id === borrowedBook.id)) {
             // book was inside wishlist, remove it from wishlist when borrowed.
-            const bookIndex = user.wishlist.indexOf(borrowedBook);
+            const bookIndex = user.wishlist.findIndex((book) => book.id === borrowedBook.id);
             const [removeWishlistBook] = user.wishlist.splice(bookIndex, 1);
         }
     }
@@ -98,7 +98,7 @@ app.delete('/return-book/:username/:bookId', (req, res) => {
     }
 
     // remove the book from the list of borrowed_books
-    const bookIndex = user.borrowed_books.indexOf(returnBook);
+    const bookIndex = user.wishlist.findIndex((book) => book.id === bookId);
     const [removeReturnBook] = user.borrowed_books.splice(bookIndex, 1);
 
     writeUsers(users);  // update the users.json file.
@@ -172,7 +172,7 @@ app.delete('/remove-from-wishlist/:username/:bookId', (req, res) => {
     }
 
     // remove the book from the wishlist
-    const bookIndex = user.wishlist.indexOf(removeBook);
+    const bookIndex = user.wishlist.findIndex((book) => book.id === bookId);
     const [removeWishlistBook] = user.wishlist.splice(bookIndex, 1);
 
     writeUsers(users);  // update the users.json file.
