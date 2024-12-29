@@ -103,7 +103,8 @@ function Wishlist() {
 
     const Notes = () => {
         // displays the textarea for adding notes to a book inside the wishlist.
-        return <div style={{marginTop: "15px", display: 'flex'}}>
+        // post notes button is not aligned with the textarea
+        return <div style={{marginTop: "15px", display: 'flex', alignItems: 'start'}}>
             <textarea
                 name="notes"
                 placeholder="Write a note..."
@@ -113,7 +114,7 @@ function Wishlist() {
                 >
             </textarea>
 
-            <button id="post-notes-button" onClick={() => handlePost()} style={{marginTop: 'auto'}}>Post</button>
+            <button id="post-notes-button" onClick={() => handlePost()} >Post</button>
         </div>
     }
 
