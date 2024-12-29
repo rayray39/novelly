@@ -47,7 +47,7 @@ code {
   border: none;
 }
 
-#borrow-button, #wishlist-button, #return-button, #remove-button, #add-notes-button {
+#borrow-button, #wishlist-button, #return-button, #remove-button, #add-notes-button, #post-notes-button {
   background-color: black;
   border: none;
   margin: 10px 5px 0px 5px;

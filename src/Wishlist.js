@@ -103,7 +103,7 @@ function Wishlist() {
 
     const Notes = () => {
         // displays the textarea for adding notes to a book inside the wishlist.
-        return <div style={{marginTop: "15px"}}>
+        return <div style={{marginTop: "15px", display: 'flex'}}>
             <textarea
                 name="notes"
                 placeholder="Write a note..."
@@ -112,6 +112,8 @@ function Wishlist() {
                 autoFocus='true'
                 >
             </textarea>
+
+            <button id="post-notes-button" onClick={() => handlePost()} style={{marginTop: 'auto'}}>Post</button>
         </div>
     }
 
@@ -120,6 +122,10 @@ function Wishlist() {
             ...prev,
             [bookId]: !prev[bookId]     // toggle specific book's state.
         }))
+    }
+
+    const handlePost = () => {
+        return ;
     }
 
     const listItems = wishlistBooks.map((book) => <div className="books-card-display" key={book.id}>
