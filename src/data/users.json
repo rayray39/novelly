@@ -29,16 +29,6 @@
     ],
     "wishlist": [
       {
-        "id": "2miDHzlltK4C",
-        "title": "The Death and Life of Superman",
-        "authors": [
-          "Roger Stern"
-        ],
-        "publishedDate": "1994-08",
-        "image": "http://books.google.com/books/content?id=2miDHzlltK4C&printsec=frontcover&img=1&zoom=1&source=gbs_api",
-        "description": "The events leading up to Superman's fatal battle with Doomsday and the strange events after Superman's death. The book was primarily adapted from the story serialized in comic books."
-      },
-      {
         "id": "rMS6JFuLgx4C",
         "title": "First Man",
         "authors": [
@@ -47,6 +37,16 @@
         "publishedDate": "2012-11-27",
         "image": "http://books.google.com/books/content?id=rMS6JFuLgx4C&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
         "description": "On July 20, 1969, the world stood still to watch American astronaut Neil A. Armstrong become the first person ever to step on the surface of another heavenly body. Upon his return to Earth, Armstrong was celebrated for his monumental achievement. He was also--as NASA historian Hansen reveals in this authorized biography--misunderstood. Armstrong's accomplishments as an engineer, a test pilot, and an astronaut have long been a matter of record, but Hansen's access to private documents and unpublished sources and his interviews with more than 125 subjects (including more than fifty hours with Armstrong himself) yield the first in-depth analysis of this elusive, reluctant hero."
+      },
+      {
+        "id": "bM79cwyK4woC",
+        "title": "Life Of Pi, Illustrated",
+        "authors": [
+          "Yann Martel"
+        ],
+        "publishedDate": "2012-07-19",
+        "image": "http://books.google.com/books/content?id=bM79cwyK4woC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+        "description": "After the tragic sinking of a cargo ship, one solitary lifeboat remains bobbing on the wild, blue Pacific. The only survivors from the wreck are a sixteen-year-old boy named Pi, a hyena, a zebra with a broken leg, a female orang-utan - and a 450-pound Royal Bengal tiger. Since it was first published in 2002, Life of Pi has entered mainstream consciousness and remains one of the most extraordinary works of fiction in recent years. In October 2005 Canongate launched a competition with The Times to find an artist to illustrate Yann Martel's international bestseller. Soon the competition expanded as the Globe and Mail and The Age newspapers also launched a search in Canada and Australia. From thousands of entries, Croatian artist Tomislav Torjanac was chosen as the illustrator for this new edition of Life of Pi. Now readers can enjoy this extraordinary tale with his glorious colour illustrations."
       }
     ]
   },
@@ -61,16 +61,17 @@
     "role": "user",
     "borrowed_books": [
       {
-        "id": "8wYwvgAACAAJ",
-        "title": "One piece",
+        "id": "FTiGDwAAQBAJ",
+        "title": "Talking to Strangers",
         "authors": [
-          "Eiichiro Oda"
+          "Malcolm Gladwell"
         ],
-        "publishedDate": "2016-12",
-        "image": "http://books.google.com/books/content?id=8wYwvgAACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
-        "description": "No Description Available",
-        "dueDate": "2025-01-19T13:23:58.008Z"
+        "publishedDate": "2019-09-10",
+        "image": "http://books.google.com/books/content?id=FTiGDwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+        "description": "THE INTERNATIONAL BESTSELLER 'Compelling, haunting, tragic stories . . . resonate long after you put the book down' James McConnachie, Sunday Times Book of the Year The routine traffic stop that ends in tragedy. The spy who spends years undetected at the highest levels of the Pentagon. The false conviction of Amanda Knox. Why do we so often get other people wrong? Why is it so hard to detect a lie, read a face or judge a stranger's motives? Using stories of deceit and fatal errors to cast doubt on our strategies for dealing with the unknown, Malcolm Gladwell takes us on an intellectual adventure into the darker side of human nature, where strangers are never simple and misreading them can have disastrous consequences.",
+        "dueDate": "2025-01-19T13:56:20.914Z"
       }
-    ]
+    ],
+    "wishlist": []
   }
 ]

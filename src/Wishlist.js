@@ -49,10 +49,12 @@ function Wishlist() {
         // makes a POST request to server.
         const currentBorrowedBooks = currentUser.borrowed_books;    // current list of borrowed books for logged in user.
         const alreadyBorrowed = (book) => book.id === borrowedBook.id;
-        if (currentBorrowedBooks.some(alreadyBorrowed)) {
-            alert(`book already borrowed: ${borrowedBook.title}`);
-            console.log(`book already borrowed: ${borrowedBook.title}`)
-            return;
+        if (Array.isArray(currentBorrowedBooks)) {
+            if (currentBorrowedBooks.some(alreadyBorrowed)) {
+                alert(`book already borrowed: ${borrowedBook.title}`);
+                console.log(`book already borrowed: ${borrowedBook.title}`)
+                return;
+            }
         }
         try {
             const repsonse = await fetch('http://localhost:5000/borrow-book', {
@@ -101,7 +103,7 @@ function Wishlist() {
         };
     }
 
-    const Notes = () => {
+    const AddNotes = () => {
         // displays the textarea for adding notes to a book inside the wishlist.
         // post notes button is not aligned with the textarea
         return <div style={{marginTop: "15px", display: 'flex', alignItems: 'start'}}>
@@ -110,7 +112,7 @@ function Wishlist() {
                 placeholder="Write a note..."
                 aria-label="Notes for a book"
                 cols='40'
-                autoFocus='true'
+                autoFocus={true}
                 >
             </textarea>
 
@@ -145,7 +147,7 @@ function Wishlist() {
             <button id="add-notes-button" onClick={() => handleNotes(book.id)}>{openNotes[book.id] ? 'Close' : 'Add'} notes</button>
         </div>
 
-        {openNotes[book.id] ? <Notes /> : null}
+        {openNotes[book.id] ? <AddNotes /> : null}
     </div>)
 
     return <div className="route-page" id="wishlist-page">

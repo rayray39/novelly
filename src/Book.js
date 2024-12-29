@@ -17,10 +17,12 @@ function Book(props) {
         // makes a POST request to server.
         const currentBorrowedBooks = currentUser.borrowed_books;    // current list of borrowed books for logged in user.
         const alreadyBorrowed = (book) => book.id === borrowedBook.id;
-        if (Array.isArray(currentBorrowedBooks) && currentBorrowedBooks.some(alreadyBorrowed)) {
-            alert(`book already borrowed: ${borrowedBook.title}`);
-            console.log(`book already borrowed: ${borrowedBook.title}`)
-            return;
+        if (Array.isArray(currentBorrowedBooks)) {
+            if (currentBorrowedBooks.some(alreadyBorrowed)) {
+                alert(`book already borrowed: ${borrowedBook.title}`);
+                console.log(`book already borrowed: ${borrowedBook.title}`)
+                return;
+            }
         }
         try {
             const repsonse = await fetch('http://localhost:5000/borrow-book', {
@@ -46,7 +48,7 @@ function Book(props) {
         // makes a POST request to server.
         const currentWishlistBooks = currentUser.wishlist;    // current list of wishlist books for logged in user.
         const alreadyInWishlist = (book) => book.id === wishlistBook.id;
-        if (currentWishlistBooks.some(alreadyInWishlist)) {
+        if (Array.isArray(currentWishlistBooks) && currentWishlistBooks.some(alreadyInWishlist)) {
             alert(`book already added to wishlist: ${wishlistBook.title}`);
             console.log(`book already added to wishlist: ${wishlistBook.title}`)
             return;

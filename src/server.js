@@ -43,27 +43,18 @@ app.post('/borrow-book', (req, res) => {
     if (!user) {
         return res.status(404).json({ error: 'User not found.' });
     }
-    if (Array.isArray(user.borrowed_books) && user.borrowed_books.some((book) => book.id === borrowedBook.id)) {
-        // book already borrowed.
-        return res.status(400).json({ error: `borrowedBook: [${borrowedBook.title}] already borrowed.` });
+    if (Array.isArray(user.borrowed_books)) {   // check first if the borrowed_books array is present.
+        if (user.borrowed_books.some((book) => book.id === borrowedBook.id)) {
+            // book already borrowed.
+            return res.status(400).json({ error: `borrowedBook: [${borrowedBook.title}] already borrowed.` });
+        }
     }
-    // if (Object.hasOwn(user, 'borrowed_books')) {
-    //     if (user.borrowed_books.some((book) => book.id === borrowedBook.id)) {
-    //         // book already borrowed.
-    //         return res.status(400).json({ error: `borrowedBook: [${borrowedBook.title}] already borrowed.` });
-    //     }
-    // }
-    // if (Object.hasOwn(user, 'wishlist')) {
-    //     if (user.wishlist.some((book) => book.id === borrowedBook.id)) {
-    //         // book was inside wishlist, remove it from wishlist when borrowed.
-    //         const bookIndex = user.wishlist.indexOf(borrowedBook);
-    //         const [removeWishlistBook] = user.wishlist.splice(bookIndex, 1);
-    //     }
-    // }
-    if (Array.isArray(user.wishlist) && user.wislist.some((book) => book.id === borrowedBook.id)) {
-         // book was inside wishlist, remove it from wishlist when borrowed.
-        const bookIndex = user.wishlist.indexOf(borrowedBook);
-        const [removeWishlistBook] = user.wishlist.splice(bookIndex, 1);
+    if (Array.isArray(user.wishlist)) {     // check first if the wishlist array is present.
+        if (user.wishlist.some((book) => book.id === borrowedBook.id)) {
+            // book was inside wishlist, remove it from wishlist when borrowed.
+            const bookIndex = user.wishlist.indexOf(borrowedBook);
+            const [removeWishlistBook] = user.wishlist.splice(bookIndex, 1);
+        }
     }
 
     const borrowedBookWithDueDate = {...borrowedBook, dueDate: dueDate.toISOString()};   // add due date to borrowed book.
@@ -145,11 +136,11 @@ app.post('/add-to-wishlist', (req, res) => {
     if (!user) {
         return res.status(404).json({ error: 'User not found.' });
     }
-    if (user.wishlist && user.wishlist.some((book) => book.id === wishlistBook.id)) {
+    if (Array.isArray(user.wishlist) && user.wishlist.some((book) => book.id === wishlistBook.id)) {
         // book already inside wishlist.
         return res.status(400).json({ error: `wishlistBook: [${wishlistBook.title}] already added to wishlist.` });
     }
-    if (user.borrowed_books && user.borrowed_books.some((book) => book.id === wishlistBook.id)) {
+    if (Array.isArray(user.borrowed_books) && user.borrowed_books.some((book) => book.id === wishlistBook.id)) {
         // book already borrowed cannot be added into wishlist.
         return res.status(400).json({ error: `borrowedBook: [${wishlistBook.title}] already borrowed.` });
     }
