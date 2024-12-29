@@ -6,6 +6,7 @@ function Wishlist() {
     const [wishlistBooks, setWishlistBooks] = useState([]);     // books inside the user's wishlist.
     const {currentUser} = useUser();                            // represents the currently logged in user.
     const [openNotes, setOpenNotes] = useState(false);          // toggles between true/false, to open the notes textarea.
+    const [notes, setNotes] = useState({});
 
     useEffect(() => {
         // the logic will run when the component mounts and everytime the currentUser changes.
@@ -103,7 +104,7 @@ function Wishlist() {
         };
     }
 
-    const AddNotes = () => {
+    const AddNotes = (props) => {
         // displays the textarea for adding notes to a book inside the wishlist.
         // post notes button is not aligned with the textarea
         return <div style={{marginTop: "15px", display: 'flex', alignItems: 'start'}}>
@@ -113,12 +114,21 @@ function Wishlist() {
                 aria-label="Notes for a book"
                 cols='40'
                 autoFocus={true}
+                value={notes[props.bookId]}
+                onChange={(e) => getNotes(e, props.bookId)}
                 >
             </textarea>
 
-            <button id="post-notes-button" onClick={() => handlePost()} >Post</button>
+            <button id="post-notes-button" onClick={() => handlePost(props.bookId)} >Post</button>
         </div>
     }
+
+    const getNotes = (e, bookId) => {
+        setNotes((prevNotes) => ({
+            ...prevNotes,
+            [bookId]: e.target.value, // Update or add the note for the book
+        }));
+    };
 
     const handleNotes = (bookId) => {
         setOpenNotes((prev) => ({
@@ -127,8 +137,8 @@ function Wishlist() {
         }))
     }
 
-    const handlePost = () => {
-        return ;
+    const handlePost = (bookId) => {
+        console.log(`notes: ${notes[bookId]}`);
     }
 
     const listItems = wishlistBooks.map((book) => <div className="books-card-display" key={book.id}>
@@ -147,7 +157,7 @@ function Wishlist() {
             <button id="add-notes-button" onClick={() => handleNotes(book.id)}>{openNotes[book.id] ? 'Close' : 'Add'} notes</button>
         </div>
 
-        {openNotes[book.id] ? <AddNotes /> : null}
+        {openNotes[book.id] ? <AddNotes bookId={book.id} /> : null}
     </div>)
 
     return <div className="route-page" id="wishlist-page">
