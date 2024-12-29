@@ -3,9 +3,9 @@ import TopNavBar from "./TopNavBar"
 import { useUser } from "./UserContext";
 
 function Wishlist() {
-    const [wishlistBooks, setWishlistBooks] = useState([]);
-    const {currentUser} = useUser();
-    const [openNotes, setOpenNotes] = useState(false);
+    const [wishlistBooks, setWishlistBooks] = useState([]);     // books inside the user's wishlist.
+    const {currentUser} = useUser();                            // represents the currently logged in user.
+    const [openNotes, setOpenNotes] = useState(false);          // toggles between true/false, to open the notes textarea.
 
     useEffect(() => {
         // the logic will run when the component mounts and everytime the currentUser changes.
@@ -102,6 +102,7 @@ function Wishlist() {
     }
 
     const Notes = () => {
+        // displays the textarea for adding notes to a book inside the wishlist.
         return <div style={{marginTop: "15px"}}>
             <textarea
                 name="notes"
@@ -134,7 +135,7 @@ function Wishlist() {
         <div style={{display:'flex', marginTop:'5px'}}>
             <button id="borrow-button" onClick={() => handleBorrow(book)}>Borrow</button>
             <button id="remove-button" onClick={() => handleRemoveBook(book.id)}>Remove</button>
-            <button id="add-notes-button" onClick={() => handleNotes(book.id)}>Add notes</button>
+            <button id="add-notes-button" onClick={() => handleNotes(book.id)}>{openNotes[book.id] ? 'Close' : 'Add'} notes</button>
         </div>
 
         {openNotes[book.id] ? <Notes /> : null}
