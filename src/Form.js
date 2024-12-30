@@ -23,11 +23,6 @@ function Form() {
         return username.length === 0 || password.length === 0;
     }
 
-    const PasswordError = () => {
-        const errorStyle = {fontSize: "11px", textAlign: "center", color: 'red'};
-        return <p style={errorStyle}>Your password is incorrect!</p>
-    }
-
     const handleClick = (e) => {
         e.preventDefault();
         // guard clauses for username and password validation.
