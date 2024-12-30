@@ -160,6 +160,7 @@ function Wishlist() {
     }
 
     const viewAllNotes = async () => {
+        // view all the notes for wishlist books that have them. mainly for debugging.
         try {
             const response = await fetch(`http://localhost:5000/wishlist/all-notes/${currentUser.username}`, {
                 method: 'GET',
@@ -194,7 +195,7 @@ function Wishlist() {
             <button id="remove-button" onClick={() => handleRemoveBook(book.id)}>Remove</button>
             <button id="add-notes-button" onClick={() => handleNotes(book.id)}>{openNotes[book.id] ? 'Close' : 'Add'} notes</button>
 
-            <button onClick={viewAllNotes}>view all notes</button>
+            {/* <button onClick={viewAllNotes}>view all notes</button> */}
         </div>
 
         {openNotes[book.id] ? <AddNotes bookId={book.id} /> : null}

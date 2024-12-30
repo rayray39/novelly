@@ -213,12 +213,9 @@ app.get('/wishlist/all-notes/:username', (req, res) => {
         return res.status(404).json({ error: 'Wish list not found.' });
     }
 
-    const allNotes = [];
-    user.wishlist.forEach(book => {
-        if (book.notes) {
-            allNotes.push(book.notes);
-        }
-    });
+    const allNotes = user.wishlist
+        .filter((book) => book.notes) // Only include books with notes
+        .map((book) => book.notes);  // Extract notes
 
     // get the books inside this user's wishlist.
     return res.status(200).json({ notes: allNotes });
