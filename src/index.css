@@ -47,12 +47,20 @@ code {
   border: none;
 }
 
-#borrow-button, #wishlist-button, #return-button, #remove-button {
+#borrow-button, #wishlist-button, #return-button, #remove-button, #add-notes-button {
   background-color: black;
   border: none;
   margin: 10px 5px 0px 5px;
   font-family: Georgia, 'Times New Roman', Times, serif;
 }
+
+#post-notes-button {
+  background-color: black;
+  border: none;
+  margin-left: 5px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
 
 footer {
   text-align: center;

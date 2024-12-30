@@ -16,27 +16,37 @@
         "dueDate": "2025-01-18T10:08:06.096Z"
       },
       {
-        "id": "LgZbGuzl9d0C",
-        "title": "I, Woz",
+        "id": "DUA0DwAAQBAJ",
+        "title": "The Space Barons",
         "authors": [
-          "Steve Wozniak"
+          "Christian Davenport"
         ],
-        "publishedDate": "2013-05-09",
-        "image": "http://books.google.com/books/content?id=LgZbGuzl9d0C&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
-        "description": "I, WOZ offers readers a unique glimpse into the offbeat and brilliant but ethical mind that conceived the Macintosh. After 25 years avoiding the public eye, Steve Wozniak reveals the full story of the Apple computer, from its conception to his views on the iconic cult status it has achieved today. In June 1975 Steve's curiosity and determination inspired him to build a computer, the first Apple. Six months later, he sold the machine, and for the self-professed 'engineer's engineer', success was imminent. But this story is full of life lessons, critical decisions, huge triumphs and big mistakes. Steve speaks also of his childhood, phone hacking pranks, working at Hewlett-Packard, the life-changing plane crash and teaching.",
-        "dueDate": "2025-01-18T10:08:15.860Z"
+        "publishedDate": "2018-03-20",
+        "image": "http://books.google.com/books/content?id=DUA0DwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+        "description": "The historic quest to rekindle the human exploration and colonization of space led by two rivals and their vast fortunes, egos, and visions of space as the next entrepreneurial frontier The Space Barons is the story of a group of billionaire entrepreneurs who are pouring their fortunes into the epic resurrection of the American space program. Nearly a half-century after Neil Armstrong walked on the moon, these Space Barons-most notably Elon Musk and Jeff Bezos, along with Richard Branson and Paul Allen-are using Silicon Valley-style innovation to dramatically lower the cost of space travel, and send humans even further than NASA has gone. These entrepreneurs have founded some of the biggest brands in the world-Amazon, Microsoft, Virgin, Tesla, PayPal-and upended industry after industry. Now they are pursuing the biggest disruption of all: space. Based on years of reporting and exclusive interviews with all four billionaires, this authoritative account is a dramatic tale of risk and high adventure, the birth of a new Space Age, fueled by some of the world's richest men as they struggle to end governments' monopoly on the cosmos. The Space Barons is also a story of rivalry-hard-charging startups warring with established contractors, and the personal clashes of the leaders of this new space movement, particularly Musk and Bezos, as they aim for the moon and Mars and beyond.",
+        "dueDate": "2025-01-18T10:24:01.839Z"
       }
     ],
     "wishlist": [
       {
-        "id": "QHgVAAAACAAJ",
-        "title": "Punisher Max - Volume 1",
+        "id": "rMS6JFuLgx4C",
+        "title": "First Man",
         "authors": [
-          "Unknown Author"
+          "James R. Hansen"
         ],
-        "publishedDate": "2007-08-15",
-        "image": "http://books.google.com/books/content?id=QHgVAAAACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
-        "description": "\"Frank Castle's old associate Microchip is back, and he's after the Punisher.\"--Page 4 of cover."
+        "publishedDate": "2012-11-27",
+        "image": "http://books.google.com/books/content?id=rMS6JFuLgx4C&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+        "description": "On July 20, 1969, the world stood still to watch American astronaut Neil A. Armstrong become the first person ever to step on the surface of another heavenly body. Upon his return to Earth, Armstrong was celebrated for his monumental achievement. He was also--as NASA historian Hansen reveals in this authorized biography--misunderstood. Armstrong's accomplishments as an engineer, a test pilot, and an astronaut have long been a matter of record, but Hansen's access to private documents and unpublished sources and his interviews with more than 125 subjects (including more than fifty hours with Armstrong himself) yield the first in-depth analysis of this elusive, reluctant hero."
+      },
+      {
+        "id": "bM79cwyK4woC",
+        "title": "Life Of Pi, Illustrated",
+        "authors": [
+          "Yann Martel"
+        ],
+        "publishedDate": "2012-07-19",
+        "image": "http://books.google.com/books/content?id=bM79cwyK4woC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+        "description": "After the tragic sinking of a cargo ship, one solitary lifeboat remains bobbing on the wild, blue Pacific. The only survivors from the wreck are a sixteen-year-old boy named Pi, a hyena, a zebra with a broken leg, a female orang-utan - and a 450-pound Royal Bengal tiger. Since it was first published in 2002, Life of Pi has entered mainstream consciousness and remains one of the most extraordinary works of fiction in recent years. In October 2005 Canongate launched a competition with The Times to find an artist to illustrate Yann Martel's international bestseller. Soon the competition expanded as the Globe and Mail and The Age newspapers also launched a search in Canada and Australia. From thousands of entries, Croatian artist Tomislav Torjanac was chosen as the illustrator for this new edition of Life of Pi. Now readers can enjoy this extraordinary tale with his glorious colour illustrations."
       }
     ]
   },
@@ -44,5 +54,35 @@
     "username": "benny",
     "password": "safepassword",
     "role": "admin"
+  },
+  {
+    "username": "zoro",
+    "password": "password",
+    "role": "user",
+    "borrowed_books": [],
+    "wishlist": [
+      {
+        "id": "ialrgIT41OAC",
+        "title": "Outliers",
+        "authors": [
+          "Malcolm Gladwell"
+        ],
+        "publishedDate": "2008-11-18",
+        "image": "http://books.google.com/books/content?id=ialrgIT41OAC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+        "description": "From the bestselling author of Blink and The Tipping Point, Malcolm Gladwell's Outliers: The Story of Success overturns conventional wisdom about genius to show us what makes an ordinary person an extreme overachiever. Why do some people achieve so much more than others? Can they lie so far out of the ordinary? In this provocative and inspiring book, Malcolm Gladwell looks at everyone from rock stars to professional athletes, software billionaires to scientific geniuses, to show that the story of success is far more surprising, and far more fascinating, than we could ever have imagined. He reveals that it's as much about where we're from and what we do, as who we are - and that no one, not even a genius, ever makes it alone. Outliers will change the way you think about your own life story, and about what makes us all unique. 'Gladwell is not only a brilliant storyteller; he can see what those stories tell us, the lessons they contain' Guardian 'Malcolm Gladwell is a global phenomenon ... he has a genius for making everything he writes seem like an impossible adventure' Observer 'He is the best kind of writer - the kind who makes you feel like you're a genius, rather than he's a genius' The Times",
+        "notes": "one of the best books ever"
+      },
+      {
+        "id": "4KDiCwAAQBAJ",
+        "title": "Superman: Reign of the Supermen",
+        "authors": [
+          "Various"
+        ],
+        "publishedDate": "2016-04-12",
+        "image": "http://books.google.com/books/content?id=4KDiCwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+        "description": "SUPERMAN IS DEAD.But now, four mysterious beings appear--all with the powers and abilities of the Man of Steel! One claims he is a clone from the DNA of Superman. Another--half-man and half-machine--says he is Superman with a cyborg body. Still another, a cold redeemer of justice, states that he alone has the right to wear the \"S\" shield. And, finally, an armored figure who says he fights with the heart and soul of Superman.Who is the true Superman?DAN JURGENS (SUPERMAN: LOIS & CLARK), JERRY ORDWAY (ADVENTURES OF SUPERMAN), LOUISE SIMONSON (SUPERMAN: THE MAN OF STEEL) and others introduce four new Supermen to the DC Universe. The third of four volumes chronicling the epic saga of the Death and Return of Superman, collecting ACTION COMICS #687-688, ADVENTURES OF SUPERMAN #500-502, SUPERMAN #78-79, SUPERMAN ANNUAL #5, SUPERMAN: THE MAN OF STEEL #22-23 and SUPERMAN: THE MAN OF STEEL ANNUAL #2!",
+        "notes": "his name is clark kent"
+      }
+    ]
   }
 ]
