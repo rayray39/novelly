@@ -8,6 +8,9 @@ function Wishlist() {
     const [openNotes, setOpenNotes] = useState(false);          // toggles between true/false, to open the notes textarea.
     const textareaRef = useRef({});
 
+    const [bookNotesContent, setBookNotesContent] = useState({});           // holds the content of the notes for every book.
+    const [renderDisplayedNotes, setRenderDisplayedNotes] = useState({});   // toggles between true/false, to display posted notes.
+
     useEffect(() => {
         // the logic will run when the component mounts and everytime the currentUser changes.
         const fetchWishlistBooks = async () => {
@@ -128,8 +131,24 @@ function Wishlist() {
     }
 
     const handlePost = async (idOfBook) => {
+        // post button
         const notes = textareaRef.current[idOfBook];
         console.log(`notes: ${notes}`);
+
+        setBookNotesContent((prev) => ({    // assign content of notes to book.
+            ...prev,
+            [idOfBook]: notes
+        }))
+
+        setOpenNotes((prev) => ({   // closes the write access textarea.
+            ...prev,
+            [idOfBook]: false
+        }))
+
+        setRenderDisplayedNotes((prev) => ({    // displays the posted notes.
+            ...prev,
+            [idOfBook]: true
+        }))
 
         try {
             const response = await fetch('http://localhost:5000/wishlist/post-notes', {
@@ -151,10 +170,16 @@ function Wishlist() {
     }
 
     const handleNotes = (bookId) => {
+        // Add Notes button
         // open or close notes textarea for specific book.
         setOpenNotes((prev) => ({
             ...prev,
             [bookId]: !prev[bookId]     // toggle specific book's state.
+        }))
+
+        setRenderDisplayedNotes((prev) => ({
+            ...prev,
+            [bookId]: false     // hides the posted notes.
         }))
     }
 
@@ -179,6 +204,14 @@ function Wishlist() {
         }
     }
 
+    const DisplayedNotes = (props) => {
+        // component to display posted notes (readonly textarea)
+        const contentOfNotes = bookNotesContent[props.bookId];
+        return <div style={{marginTop: '15px'}}>
+            <textarea name="displayed-notes" readOnly cols={40} value={contentOfNotes}></textarea>
+        </div>
+    }
+
     const listItems = wishlistBooks.map((book) => <div className="books-card-display" key={book.id}>
         <p><img src={book.image} alt="cover page of book" /></p>
         <p>{book.title}</p>
@@ -198,6 +231,7 @@ function Wishlist() {
         </div>
 
         {openNotes[book.id] ? <AddNotes bookId={book.id} /> : null}
+        {renderDisplayedNotes[book.id] ? <DisplayedNotes bookId={book.id} /> : null}
     </div>)
 
     return <div className="route-page" id="wishlist-page">
