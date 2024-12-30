@@ -58,15 +58,15 @@ function Wishlist() {
             }
         }
         try {
-            const repsonse = await fetch('http://localhost:5000/borrow-book', {
+            const response = await fetch('http://localhost:5000/borrow-book', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ username: currentUser.username, borrowedBook }),
             });
 
-            const data = await repsonse.json();
+            const data = await response.json();
             
-            if (!repsonse.ok) {
+            if (!response.ok) {
                 const message = data.error;
                 alert(message);
                 return;
@@ -81,7 +81,7 @@ function Wishlist() {
     const handleRemoveBook = async (bookId) => {
         // makes a DELETE request to the server to remove book from wishlist.
         try {
-            const repsonse = await fetch(`http://localhost:5000/remove-from-wishlist/${currentUser.username}/${bookId}`, {
+            const response = await fetch(`http://localhost:5000/remove-from-wishlist/${currentUser.username}/${bookId}`, {
                 method: 'DELETE',
             });
             
@@ -90,9 +90,9 @@ function Wishlist() {
                 prevBooks.filter((book) => book.id !== bookId)
             );
 
-            const data = await repsonse.json();
+            const data = await response.json();
             
-            if (!repsonse.ok) {
+            if (!response.ok) {
                 const message = data.error;
                 alert(message);
                 return;
@@ -133,14 +133,14 @@ function Wishlist() {
         console.log(`notes: ${notes}`);
 
         try {
-            const repsonse = await fetch('http://localhost:5000/wishlist/post-notes', {
+            const response = await fetch('http://localhost:5000/wishlist/post-notes', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ username: currentUser.username, bookId: idOfBook, notes: notes }),
             });
 
-            const data = await repsonse.json();
-            if (!repsonse.ok) {
+            const data = await response.json();
+            if (!response.ok) {
                 const message = data.error;
                 alert(message);
                 return;
@@ -159,12 +159,24 @@ function Wishlist() {
         }))
     }
 
-    const viewAllNotes = () => {
-        currentUser.wishlist.forEach(book => {
-            if (book.notes) {
-                console.log(`note for ${book.title}: ${book.notes}`);
+    const viewAllNotes = async () => {
+        try {
+            const response = await fetch(`http://localhost:5000/wishlist/all-notes/${currentUser.username}`, {
+                method: 'GET',
+            });
+
+            const data = await response.json();
+            if (!response.ok) {
+                const message = data.error;
+                alert(message);
+                return;
             }
-        });
+            data.notes.forEach(note => {
+                console.log(`note: ${note}`);
+            });
+        } catch (error) {
+            console.error(`Error in adding notes to book: ${error}`)
+        }
     }
 
     const listItems = wishlistBooks.map((book) => <div className="books-card-display" key={book.id}>

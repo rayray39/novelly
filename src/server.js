@@ -200,17 +200,29 @@ app.post('/wishlist/post-notes', (req, res) => {
     return res.status(200).json({ message: `Successfully added notes to: ${addNotesToBook.title}`, user});
 })
 
-// // get all the notes, for every book, for currently logged in user. (mainly for debugging)
-// app.post('/wishlist/all-notes/:username', (req, res) => {
-//     const username = req.params.username;
-//     const users = readUsers();
-//     const user = users.find((user) => user.username === username);
-//     if (!user) {
-//         return res.status(404).json({ error: 'User not found.' });
-//     }
+// get all the notes, for every book, for currently logged in user. (mainly for debugging)
+app.get('/wishlist/all-notes/:username', (req, res) => {
+    const username = req.params.username;
+    const users = readUsers();
+    const user = users.find((user) => user.username === username);
+    if (!user) {
+        return res.status(404).json({ error: 'User not found.' });
+    }
 
+    if (!user.wishlist) {
+        return res.status(404).json({ error: 'Wish list not found.' });
+    }
 
-// })
+    const allNotes = [];
+    user.wishlist.forEach(book => {
+        if (book.notes) {
+            allNotes.push(book.notes);
+        }
+    });
+
+    // get the books inside this user's wishlist.
+    return res.status(200).json({ notes: allNotes });
+})
 
 
 // Start the server

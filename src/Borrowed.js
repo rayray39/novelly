@@ -36,7 +36,7 @@ function Borrowed() {
     const handleReturnBook = async (bookId) => {
         // makes a DELETE request to the server to remove borrowed book from list of borrowed books.
         try {
-            const repsonse = await fetch(`http://localhost:5000/return-book/${currentUser.username}/${bookId}`, {
+            const response = await fetch(`http://localhost:5000/return-book/${currentUser.username}/${bookId}`, {
                 method: 'DELETE',
             });
             
@@ -45,8 +45,8 @@ function Borrowed() {
                 prevBooks.filter((book) => book.id !== bookId)
             );
 
-            const data = await repsonse.json();
-            if (!repsonse.ok) {
+            const data = await response.json();
+            if (!response.ok) {
                 const message = data.error;
                 alert(message);
                 return;

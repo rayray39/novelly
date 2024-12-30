@@ -25,14 +25,14 @@ function Book(props) {
             }
         }
         try {
-            const repsonse = await fetch('http://localhost:5000/borrow-book', {
+            const response = await fetch('http://localhost:5000/borrow-book', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ username: currentUser.username, borrowedBook }),
             });
 
-            const data = await repsonse.json();
-            if (!repsonse.ok) {
+            const data = await response.json();
+            if (!response.ok) {
                 const message = data.error;
                 alert(message);
                 return;
@@ -54,15 +54,15 @@ function Book(props) {
             return;
         }
         try {
-            const repsonse = await fetch('http://localhost:5000/add-to-wishlist', {
+            const response = await fetch('http://localhost:5000/add-to-wishlist', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ username: currentUser.username, wishlistBook }),
             });
 
-            const data = await repsonse.json();
+            const data = await response.json();
 
-            if (!repsonse.ok) {
+            if (!response.ok) {
                 const message = data.error;
                 alert(message);
                 return;
