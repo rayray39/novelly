@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react"
+import { useState, useEffect, useRef } from "react"
 import TopNavBar from "./TopNavBar"
 import { useUser } from "./UserContext";
 
@@ -6,7 +6,8 @@ function Wishlist() {
     const [wishlistBooks, setWishlistBooks] = useState([]);     // books inside the user's wishlist.
     const {currentUser} = useUser();                            // represents the currently logged in user.
     const [openNotes, setOpenNotes] = useState(false);          // toggles between true/false, to open the notes textarea.
-    const [notes, setNotes] = useState({});
+    // const [notes, setNotes] = useState({});
+    const textareaRef = useRef({});
 
     useEffect(() => {
         // the logic will run when the component mounts and everytime the currentUser changes.
@@ -114,8 +115,10 @@ function Wishlist() {
                 aria-label="Notes for a book"
                 cols='40'
                 autoFocus={true}
-                value={notes[props.bookId]}
-                onChange={(e) => getNotes(e, props.bookId)}
+                // value={notes[props.bookId] || ''}
+                // onChange={(e) => getNotes(e, props.bookId)}
+                onChange={(e) => {noteChange(e, props.bookId)}}
+                ref={(el) => (textareaRef.current[props.bookId] = el?.value)}
                 >
             </textarea>
 
@@ -123,12 +126,16 @@ function Wishlist() {
         </div>
     }
 
-    const getNotes = (e, bookId) => {
-        setNotes((prevNotes) => ({
-            ...prevNotes,
-            [bookId]: e.target.value, // Update or add the note for the book
-        }));
-    };
+    // const getNotes = (e, bookId) => {
+    //     setNotes((prevNotes) => ({
+    //         ...prevNotes,
+    //         [bookId]: e.target.value, // Update or add the note for the book
+    //     }));
+    // };
+
+    const noteChange = (e, bookId) => {
+        textareaRef.current[bookId] = e.target.value;
+    }
 
     const handleNotes = (bookId) => {
         setOpenNotes((prev) => ({
@@ -138,7 +145,8 @@ function Wishlist() {
     }
 
     const handlePost = (bookId) => {
-        console.log(`notes: ${notes[bookId]}`);
+        const notes = textareaRef.current[bookId];
+        console.log(`notes: ${notes}`);
     }
 
     const listItems = wishlistBooks.map((book) => <div className="books-card-display" key={book.id}>
