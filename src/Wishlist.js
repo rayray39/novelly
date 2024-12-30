@@ -106,7 +106,6 @@ function Wishlist() {
 
     const AddNotes = (props) => {
         // displays the textarea for adding notes to a book inside the wishlist.
-        // post notes button is not aligned with the textarea
         return <div style={{marginTop: "15px", display: 'flex', alignItems: 'start'}}>
             <textarea
                 name="notes"
@@ -119,7 +118,7 @@ function Wishlist() {
                 >
             </textarea>
 
-            <button id="post-notes-button" onClick={() => handlePost(props.bookId)} >Post</button>
+            <button id="post-notes-button" onClick={() => handlePost(props.bookId)}>Post</button>
         </div>
     }
 
