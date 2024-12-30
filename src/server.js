@@ -179,6 +179,39 @@ app.delete('/remove-from-wishlist/:username/:bookId', (req, res) => {
     return res.status(200).json({ message: `Successfully removed: ${removeWishlistBook.title}`, user });
 })
 
+// adds notes to book inside the wishlist of this user.
+app.post('/wishlist/post-notes', (req, res) => {
+    const {username, bookId, notes} = req.body;
+
+    const users = readUsers();
+    const user = users.find((user) => user.username === username);
+    if (!user) {
+        return res.status(404).json({ error: 'User not found.' });
+    }
+
+    const addNotesToBook = user.wishlist.find((book) => book.id === bookId);
+    if (!addNotesToBook) {
+        return res.status(404).json({ error: 'Book title not found.' });
+    }
+
+    const bookIndex = user.wishlist.findIndex((book) => book.id === bookId);
+    user.wishlist[bookIndex] = { ...user.wishlist[bookIndex], notes: notes };
+    writeUsers(users);
+    return res.status(200).json({ message: `Successfully added notes to: ${addNotesToBook.title}`, user});
+})
+
+// // get all the notes, for every book, for currently logged in user. (mainly for debugging)
+// app.post('/wishlist/all-notes/:username', (req, res) => {
+//     const username = req.params.username;
+//     const users = readUsers();
+//     const user = users.find((user) => user.username === username);
+//     if (!user) {
+//         return res.status(404).json({ error: 'User not found.' });
+//     }
+
+
+// })
+
 
 // Start the server
 app.listen(PORT, () => {

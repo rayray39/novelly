@@ -6,7 +6,6 @@ function Wishlist() {
     const [wishlistBooks, setWishlistBooks] = useState([]);     // books inside the user's wishlist.
     const {currentUser} = useUser();                            // represents the currently logged in user.
     const [openNotes, setOpenNotes] = useState(false);          // toggles between true/false, to open the notes textarea.
-    // const [notes, setNotes] = useState({});
     const textareaRef = useRef({});
 
     useEffect(() => {
@@ -115,8 +114,6 @@ function Wishlist() {
                 aria-label="Notes for a book"
                 cols='40'
                 autoFocus={true}
-                // value={notes[props.bookId] || ''}
-                // onChange={(e) => getNotes(e, props.bookId)}
                 onChange={(e) => {noteChange(e, props.bookId)}}
                 ref={(el) => (textareaRef.current[props.bookId] = el?.value)}
                 >
@@ -126,27 +123,48 @@ function Wishlist() {
         </div>
     }
 
-    // const getNotes = (e, bookId) => {
-    //     setNotes((prevNotes) => ({
-    //         ...prevNotes,
-    //         [bookId]: e.target.value, // Update or add the note for the book
-    //     }));
-    // };
-
     const noteChange = (e, bookId) => {
+        // dynamically updates the notes for specific book with bookId.
         textareaRef.current[bookId] = e.target.value;
     }
 
+    const handlePost = async (idOfBook) => {
+        const notes = textareaRef.current[idOfBook];
+        console.log(`notes: ${notes}`);
+
+        try {
+            const repsonse = await fetch('http://localhost:5000/wishlist/post-notes', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ username: currentUser.username, bookId: idOfBook, notes: notes }),
+            });
+
+            const data = await repsonse.json();
+            if (!repsonse.ok) {
+                const message = data.error;
+                alert(message);
+                return;
+            }
+            alert(`${data.message}`);
+        } catch (error) {
+            console.error(`Error in adding notes to book: ${error}`)
+        }
+    }
+
     const handleNotes = (bookId) => {
+        // open or close notes textarea for specific book.
         setOpenNotes((prev) => ({
             ...prev,
             [bookId]: !prev[bookId]     // toggle specific book's state.
         }))
     }
 
-    const handlePost = (bookId) => {
-        const notes = textareaRef.current[bookId];
-        console.log(`notes: ${notes}`);
+    const viewAllNotes = () => {
+        currentUser.wishlist.forEach(book => {
+            if (book.notes) {
+                console.log(`note for ${book.title}: ${book.notes}`);
+            }
+        });
     }
 
     const listItems = wishlistBooks.map((book) => <div className="books-card-display" key={book.id}>
@@ -163,6 +181,8 @@ function Wishlist() {
             <button id="borrow-button" onClick={() => handleBorrow(book)}>Borrow</button>
             <button id="remove-button" onClick={() => handleRemoveBook(book.id)}>Remove</button>
             <button id="add-notes-button" onClick={() => handleNotes(book.id)}>{openNotes[book.id] ? 'Close' : 'Add'} notes</button>
+
+            <button onClick={viewAllNotes}>view all notes</button>
         </div>
 
         {openNotes[book.id] ? <AddNotes bookId={book.id} /> : null}
