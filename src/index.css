@@ -152,3 +152,17 @@ footer {
   font-family: Georgia, 'Times New Roman', Times, serif;
   border-bottom: 1px solid white;
 }
+
+#user-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.userinfo-card {
+  background-color: white;
+  margin-bottom: 14px;
+  width: 600px;
+  border-radius: 20px;
+  padding: 15px;
+  color: black;
+}
