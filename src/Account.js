@@ -8,33 +8,20 @@ function Account() {
     const [email, setEmail] = useState('');
 
     const UserInfoCard = (props) => {
-        const [saveButtonDisabled, setSaveButtonDisabled] = useState(true);
+        // card to display editable info.
+        const [saveButtonDisabled, setSaveButtonDisabled] = useState(true);     // sets save button to be disabled or not
         const inputRef = useRef(null);
 
         const getTextInputContent = () => {
             console.log(`value inside textinput: ${inputRef.current.value}`);
-        }
-
-        const SaveButton = (props) => {
-            console.log(`value of saveButtonDisabled: ${saveButtonDisabled}`);
-            return <>
-                {saveButtonDisabled ?
-                    <button id="account-save-button" disabled onClick={props.clickHandler}>save</button> :
-                    <button id="account-save-button" >save</button>
-                }
-            </>
-        }
-
-        const handleFocus = () => {
-            console.log('text input has been clicked');
-            setSaveButtonDisabled(false);
-        }
-
-        const handleBlur = () => {
             setSaveButtonDisabled(true);
         }
 
-        // card to display editable info.
+        const handleFocus = () => {
+            // when the textinput gets focused.
+            setSaveButtonDisabled(false);
+        }
+
         return <div className="userinfo-card">
             <h3>{props.heading}</h3>
             
@@ -45,10 +32,9 @@ function Account() {
                     placeholder={props.info}
                     ref={inputRef}
                     onFocus={handleFocus}
-                    onBlur={handleBlur}
                     />
 
-                <SaveButton clickHandler={getTextInputContent}/>
+                <button id="account-save-button" onClick={getTextInputContent} disabled={saveButtonDisabled} >save</button>
             </div>
         </div>
     }
