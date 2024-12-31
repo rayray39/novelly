@@ -26,6 +26,13 @@ function Wishlist() {
                 console.log(`Wishlist books: ${data.wishlist}`);
                 data.wishlist.forEach(book => {
                     console.log(book.title);
+
+                    if (book.notes) {
+                        // if this book already has notes, display the readonly post, save the notes into the bookNotesContent.
+                        setRenderDisplayedNotes((prev) => ({...prev, [book.id]: true}));
+                        setBookNotesContent((prev) => ({...prev, [book.id]: book.notes}));
+                    }
+
                 });
                 setWishlistBooks(data.wishlist || []);    // fetch the wishlist books and store in state variable.
             } catch (error) {
