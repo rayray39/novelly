@@ -1,36 +1,58 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import TopNavBar from "./TopNavBar"
 import { useUser } from "./UserContext";
 
 function Account() {
     const {currentUser} = useUser();
-    const [saveButtonDisabled, setSaveButtonDisabled] = useState(true);
     const [birthDate, setBirthDate] = useState('');
     const [email, setEmail] = useState('');
 
     const UserInfoCard = (props) => {
+        const [saveButtonDisabled, setSaveButtonDisabled] = useState(true);
+        const inputRef = useRef(null);
+
+        const getTextInputContent = () => {
+            console.log(`value inside textinput: ${inputRef.current.value}`);
+        }
+
+        const SaveButton = (props) => {
+            console.log(`value of saveButtonDisabled: ${saveButtonDisabled}`);
+            return <>
+                {saveButtonDisabled ?
+                    <button id="account-save-button" disabled onClick={props.clickHandler}>save</button> :
+                    <button id="account-save-button" >save</button>
+                }
+            </>
+        }
+
+        const handleFocus = () => {
+            console.log('text input has been clicked');
+            setSaveButtonDisabled(false);
+        }
+
+        const handleBlur = () => {
+            setSaveButtonDisabled(true);
+        }
+
         // card to display editable info.
         return <div className="userinfo-card">
             <h3>{props.heading}</h3>
             
             <div style={{display:'flex'}}>
-                <input style={{backgroundColor: 'white'}} 
+                <input style={{backgroundColor: 'white', color:'black'}} 
                     type={props.type} 
                     name={props.heading}
-                    value={props.value}
-                    onChange={props.onChange}
                     placeholder={props.info}
-                    onFocus={cardInputClick}
+                    ref={inputRef}
+                    onFocus={handleFocus}
+                    onBlur={handleBlur}
                     />
 
-                <SaveButton />
+                <SaveButton clickHandler={getTextInputContent}/>
             </div>
         </div>
     }
 
-    const cardInputClick = () => {
-        console.log('text input has been clicked')
-    }
 
     const NameCard = (props) => {
         // card to display username.
@@ -49,24 +71,6 @@ function Account() {
         </div>
     }
 
-    const SaveButton = () => {
-        console.log(`value of saveButtonDisabled: ${saveButtonDisabled}`);
-        return <>
-            {saveButtonDisabled ?
-                <button id="account-save-button" disabled>save</button> :
-                <button id="account-save-button" >save</button>
-            }
-        </>
-    }
-
-    const getBirthDate = (event) => {
-        setBirthDate(event.target.value)
-    }
-
-    const getEmail = (event) => {
-        setEmail(event.target.value)
-    }
-
     return <div className="route-page" id="account-page">
         <TopNavBar />
 
@@ -74,8 +78,8 @@ function Account() {
         
         <div id="user-info">
             <NameCard heading="Name" info={currentUser.username} type='text'/>
-            <UserInfoCard heading="Date Of Birth" info={birthDate} type='date' value={birthDate} onChange={getBirthDate}/>
-            <UserInfoCard heading="Email" info={email} type='text' value={email} onChange={getEmail}/>
+            <UserInfoCard heading="Date Of Birth" info={birthDate} type='date'/>
+            <UserInfoCard heading="Email" info={email} type='text'/>
         </div>
     </div>
 }
