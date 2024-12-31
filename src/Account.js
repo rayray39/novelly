@@ -6,8 +6,12 @@ function Account() {
 
     const UserInfoCard = (props) => {
         return <div className="userinfo-card">
-            <h2>{props.heading}</h2>
-            {props.info}
+            <h3>{props.heading}</h3>
+            
+            <div style={{display:'flex'}}>
+            <input style={{backgroundColor: 'white'}} type="text" name={props.heading} aria-label="disabled input" placeholder={props.info} disabled/>
+            <button id="account-save-button" disabled>save</button>
+            </div>
         </div>
     }
 
@@ -17,7 +21,7 @@ function Account() {
         <h1 className="main-title-2">ACCOUNT</h1>
         
         <div id="user-info">
-            <UserInfoCard heading="Name" info="Here is your name"/>
+            <UserInfoCard heading="Name" info={currentUser.username}/>
             <UserInfoCard heading="Date Of Birth" info="this is your birth date"/>
             <UserInfoCard heading="Email" info="this is your email"/>
         </div>
