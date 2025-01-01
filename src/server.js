@@ -222,6 +222,25 @@ app.get('/wishlist/all-notes/:username', (req, res) => {
 })
 
 
+app.post('/account-update', (req, res) => {
+    const { username, heading, updatedInfo } = req.body;
+
+    const users = readUsers();
+    const user = users.find((user) => user.username === username);
+    if (!user) {
+        return res.status(404).json({ error: 'User not found.' });
+    }
+    if (!heading) {
+        return res.status(404).json({ error: `${heading} is required` });
+    }
+
+    user.heading = updatedInfo;
+
+    writeUsers(users);
+    return res.status(200).json({ message: `Successfully updated info: ${heading}`, user});
+})
+
+
 // Start the server
 app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);

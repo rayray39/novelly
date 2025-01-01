@@ -12,9 +12,31 @@ function Account() {
         const [saveButtonDisabled, setSaveButtonDisabled] = useState(true);     // sets save button to be disabled or not
         const inputRef = useRef(null);
 
-        const getTextInputContent = () => {
-            console.log(`value inside textinput: ${inputRef.current.value}`);
+        const heading = props.heading;
+
+        const handleSave = async () => {
+            // makes a post request to update user's info
+            const updatedInfo = inputRef.current.value;
+            console.log(`value inside textinput: ${updatedInfo}`);
             setSaveButtonDisabled(true);
+
+            try {
+                const response = await fetch('http://localhost:5000/account-update', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ username: currentUser.username, heading: heading, updatedInfo: updatedInfo }),
+                });
+    
+                const data = await response.json();
+                if (!response.ok) {
+                    const message = data.error;
+                    alert(message);
+                    return;
+                }
+                alert(`successfully updated ${heading} info: ${updatedInfo}`);
+            } catch (error) {
+                console.error(`Error in updating info: ${error}`)
+            }
         }
 
         const handleFocus = () => {
@@ -34,7 +56,7 @@ function Account() {
                     onFocus={handleFocus}
                     />
 
-                <button id="account-save-button" onClick={getTextInputContent} disabled={saveButtonDisabled} >save</button>
+                <button id="account-save-button" onClick={handleSave} disabled={saveButtonDisabled} >save</button>
             </div>
         </div>
     }
