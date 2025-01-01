@@ -62,7 +62,19 @@
     "username": "zoro",
     "password": "password",
     "role": "user",
-    "borrowed_books": [],
+    "borrowed_books": [
+      {
+        "id": "YMNoAAAAIAAJ",
+        "title": "Batman The Complete History",
+        "authors": [
+          "Les Daniels"
+        ],
+        "publishedDate": "1999-10",
+        "image": "http://books.google.com/books/content?id=YMNoAAAAIAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+        "description": "On the comic strip character - Batman",
+        "dueDate": "2025-01-22T12:32:12.856Z"
+      }
+    ],
     "wishlist": [
       {
         "id": "ialrgIT41OAC",
@@ -74,17 +86,6 @@
         "image": "http://books.google.com/books/content?id=ialrgIT41OAC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
         "description": "From the bestselling author of Blink and The Tipping Point, Malcolm Gladwell's Outliers: The Story of Success overturns conventional wisdom about genius to show us what makes an ordinary person an extreme overachiever. Why do some people achieve so much more than others? Can they lie so far out of the ordinary? In this provocative and inspiring book, Malcolm Gladwell looks at everyone from rock stars to professional athletes, software billionaires to scientific geniuses, to show that the story of success is far more surprising, and far more fascinating, than we could ever have imagined. He reveals that it's as much about where we're from and what we do, as who we are - and that no one, not even a genius, ever makes it alone. Outliers will change the way you think about your own life story, and about what makes us all unique. 'Gladwell is not only a brilliant storyteller; he can see what those stories tell us, the lessons they contain' Guardian 'Malcolm Gladwell is a global phenomenon ... he has a genius for making everything he writes seem like an impossible adventure' Observer 'He is the best kind of writer - the kind who makes you feel like you're a genius, rather than he's a genius' The Times",
         "notes": "one of the greatest"
-      },
-      {
-        "id": "4KDiCwAAQBAJ",
-        "title": "Superman: Reign of the Supermen",
-        "authors": [
-          "Various"
-        ],
-        "publishedDate": "2016-04-12",
-        "image": "http://books.google.com/books/content?id=4KDiCwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
-        "description": "SUPERMAN IS DEAD.But now, four mysterious beings appear--all with the powers and abilities of the Man of Steel! One claims he is a clone from the DNA of Superman. Another--half-man and half-machine--says he is Superman with a cyborg body. Still another, a cold redeemer of justice, states that he alone has the right to wear the \"S\" shield. And, finally, an armored figure who says he fights with the heart and soul of Superman.Who is the true Superman?DAN JURGENS (SUPERMAN: LOIS & CLARK), JERRY ORDWAY (ADVENTURES OF SUPERMAN), LOUISE SIMONSON (SUPERMAN: THE MAN OF STEEL) and others introduce four new Supermen to the DC Universe. The third of four volumes chronicling the epic saga of the Death and Return of Superman, collecting ACTION COMICS #687-688, ADVENTURES OF SUPERMAN #500-502, SUPERMAN #78-79, SUPERMAN ANNUAL #5, SUPERMAN: THE MAN OF STEEL #22-23 and SUPERMAN: THE MAN OF STEEL ANNUAL #2!",
-        "notes": "superman is strong"
       }
     ],
     "Email": "zoro@example.com"
