@@ -1,18 +1,42 @@
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import TopNavBar from "./TopNavBar"
 import { useUser } from "./UserContext";
 
 function Account() {
     const {currentUser} = useUser();
-    const [birthDate, setBirthDate] = useState('');
-    const [email, setEmail] = useState('');
 
     const UserInfoCard = (props) => {
         // card to display editable info.
         const [saveButtonDisabled, setSaveButtonDisabled] = useState(true);     // sets save button to be disabled or not
         const inputRef = useRef(null);
+        const [inputPlaceholder, setInputPlaceholder] = useState('');
 
         const heading = props.heading;
+
+        useEffect(() => {
+            // the logic will run when the component mounts and everytime the currentUser changes.
+            const fetchCurrentInfo = async () => {
+                // makes a GET request to the server, which returns the user's email if any.
+                try {
+                    const response = await fetch(`http://localhost:5000/account/${currentUser.username}`, {
+                        method: 'GET',
+                    })
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! Status: ${response.status}`);
+                    }
+
+                    const data = await response.json();
+                    console.log(`email: ${data.email}`)
+                    setInputPlaceholder(data.email);
+                } catch (error) {
+                    console.error('Error fetching account information:', error);
+                }
+            }
+    
+            if (currentUser) {
+                fetchCurrentInfo();
+            }
+        }, [currentUser])
 
         const handleSave = async () => {
             // makes a post request to update user's info
@@ -33,6 +57,7 @@ function Account() {
                     alert(message);
                     return;
                 }
+                setInputPlaceholder(updatedInfo);
                 alert(`successfully updated ${heading} info: ${updatedInfo}`);
             } catch (error) {
                 console.error(`Error in updating info: ${error}`)
@@ -51,7 +76,7 @@ function Account() {
                 <input style={{backgroundColor: 'white', color:'black'}} 
                     type={props.type} 
                     name={props.heading}
-                    placeholder={props.info}
+                    placeholder={inputPlaceholder || 'Enter your email'}
                     ref={inputRef}
                     onFocus={handleFocus}
                     />
@@ -86,8 +111,7 @@ function Account() {
         
         <div id="user-info">
             <NameCard heading="Name" info={currentUser.username} type='text'/>
-            <UserInfoCard heading="Date Of Birth" info={birthDate} type='date'/>
-            <UserInfoCard heading="Email" info={email} type='text'/>
+            <UserInfoCard heading="Email" type='text'/>
         </div>
     </div>
 }
