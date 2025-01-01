@@ -180,6 +180,15 @@ footer {
   border-radius: 20px;
   margin-top: 14px;
   width: 600px;
+  margin-right: 40px;
+}
+
+#admin-card > p {
   font-family: Georgia, 'Times New Roman', Times, serif;
   color: black;
+}
+
+#users-borrowedBooks-list {
+  color: black;
+  font-family: Georgia, 'Times New Roman', Times, serif;
 }

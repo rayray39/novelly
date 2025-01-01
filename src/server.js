@@ -261,6 +261,27 @@ app.get('/account/:username', (req, res) => {
 })
 // ACCOUNT FEATURE END
 
+// ADMIN ACCOUNT START
+app.get('/:username/admin-all', (req, res) => {
+    const username = req.params.username;
+    const users = readUsers();
+    const user = users.find((user) => user.username === username);
+    if (!user) {
+        return res.status(404).json({ error: 'User not found.' });
+    }
+    if (user.role !== 'admin') {
+        return res.status(404).json({ error: 'No admin permissions.' });
+    }
+
+    const allNonAdminUsers = users
+        .filter((user) => user.role === 'user') // Only include users who are non-admin
+        .map((user) => ({
+            username: user.username,
+            borrowed_books: user.borrowed_books || []
+        }));
+
+    return res.status(200).json({ users: allNonAdminUsers, message: 'Successfully fetched all non-admin users.'})
+})
 
 // Start the server
 app.listen(PORT, () => {
