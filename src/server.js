@@ -28,6 +28,7 @@ const writeUsers = (data) => {
     fs.writeFileSync(usersFilePath, JSON.stringify(data, null, 2), 'utf-8');
 };
 
+// BORROW FEATURE START
 // borrow book endpoint (POST method)
 app.post('/borrow-book', (req, res) => {
     const { username, borrowedBook } = req.body;    // req is data from the frontend to backend.
@@ -105,8 +106,9 @@ app.delete('/return-book/:username/:bookId', (req, res) => {
 
     return res.status(200).json({ message: `Successfully returned: ${removeReturnBook.title}`, user });
 })
+// BORROW FEATURE END
 
-
+// WISHLIST FEATURE START
 // get the books in this user's wishlist (GET method)
 app.get('/wishlist/:username', (req, res) => {
     const username = req.params.username;
@@ -220,7 +222,9 @@ app.get('/wishlist/all-notes/:username', (req, res) => {
     // get the books inside this user's wishlist.
     return res.status(200).json({ notes: allNotes });
 })
+// WISHLIST FEATURE END
 
+// ACCOUNT FEATURE START
 // update the user's info
 app.post('/account-update', (req, res) => {
     const { username, heading, updatedInfo } = req.body;    // heading is the property, updateInfo is the new content.
@@ -255,6 +259,7 @@ app.get('/account/:username', (req, res) => {
         email: user['Email'] || 'no email'
     });
 })
+// ACCOUNT FEATURE END
 
 
 // Start the server
