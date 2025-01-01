@@ -173,3 +173,13 @@ footer {
   border: none;
   margin: 0px 0px 20px 10px;
 }
+
+#admin-card {
+  background-color: white;
+  padding: 20px;
+  border-radius: 20px;
+  margin-top: 14px;
+  width: 600px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  color: black;
+}
