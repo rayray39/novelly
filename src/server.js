@@ -221,6 +221,41 @@ app.get('/wishlist/all-notes/:username', (req, res) => {
     return res.status(200).json({ notes: allNotes });
 })
 
+// update the user's info
+app.post('/account-update', (req, res) => {
+    const { username, heading, updatedInfo } = req.body;    // heading is the property, updateInfo is the new content.
+
+    const users = readUsers();
+    const user = users.find((user) => user.username === username);
+    if (!user) {
+        return res.status(404).json({ error: 'User not found.' });
+    }
+    if (!heading) {
+        return res.status(404).json({ error: `${heading} is required` });
+    }
+
+    user[heading] = updatedInfo;
+
+    writeUsers(users);
+    return res.status(200).json({ message: `Successfully updated info: ${heading}`, user});
+})
+
+// get the user's info if any (email)
+app.get('/account/:username', (req, res) => {
+    const username = req.params.username;
+    const users = readUsers();
+    const user = users.find((user) => user.username === username);
+    if (!user) {
+        return res.status(404).json({ error: 'User not found.' });
+    }
+
+    // Return updated info and placeholders
+    return res.status(200).json({
+        message: `Successfully updated info`,
+        email: user['Email'] || 'no email'
+    });
+})
+
 
 // Start the server
 app.listen(PORT, () => {
