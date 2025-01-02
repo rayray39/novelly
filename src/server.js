@@ -292,6 +292,36 @@ app.get('/all-existing-usernames', (req, res) => {
     return res.status(200).json({ usernames: allExistingUsernames, message: 'Successfully fetched all existing usernames.'})
 })
 
+app.post('/create-account/new-user', (req, res) => {
+    const {username, password, role} = req.body;
+
+    if (!username) {
+        return res.status(400).json({ error: 'Username is required.' });
+    }
+    if (!password) {
+        return res.status(400).json({ error: 'Password is required.' });
+    }
+    if (role !== 'user') {
+        return res.status(400).json({ error: 'Admin permissions not granted.' });
+    }
+
+    const users = readUsers();
+    const existingUser = users.find((user) => user.username === username);
+    if (existingUser) {
+        return res.status(400).json({ error: 'Username already exists.' });
+    }
+
+    const newUser = {
+        'username': username,
+        'password': password,
+        'role': role
+    }
+    users.push(newUser);
+    writeUsers(users);
+
+    return res.status(200).json({ message: 'Successfully created user account.'})
+})
+
 // CREATE ACCOUNT END
 
 // Start the server

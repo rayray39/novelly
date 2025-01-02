@@ -41,7 +41,7 @@ function CreateAccount() {
             email === '';
     }
 
-    const handleClick = (e) => {
+    const handleClick = async (e) => {
         e.preventDefault();
         console.log('submitting form');
 
@@ -61,6 +61,24 @@ function CreateAccount() {
             setPasswordsDoNotMatch(false);
         }
 
+        try {
+            const response = await fetch('http://localhost:5000/create-account/new-user', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ username: username, password: password, role: 'user' }),
+            })
+    
+            if (!response.ok) {
+                const message = data.error;
+                console.log(message);
+                return;
+            }
+    
+            const data = await response.json();
+            console.log(data.message);
+        } catch (error) {
+            console.error(`Error in creating user account: ${error}`)
+        }
     }
 
     const getUsername = (event) => {
