@@ -45,7 +45,7 @@ function Form() {
             }
         } else {
             setPasswordIncorrect(true);
-            // alert("Incorrect user credentials!");
+            alert("Incorrect user credentials!");
             return;
         }
 
@@ -59,6 +59,10 @@ function Form() {
 
     const getPassword = (event) => {
         setPassword(event.target.value);
+    }
+
+    const handleCreateAccount = () => {
+        console.log('create account button pressed');
     }
 
     return <div>
@@ -78,6 +82,8 @@ function Form() {
                 style={{border:'none'}}
             />
         </form>
+
+        <input type="button" style={{border:'none'}} className="pico-background-violet-650" value='create account' onClick={handleCreateAccount} />
     </div>
 }
 
