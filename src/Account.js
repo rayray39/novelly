@@ -11,7 +11,7 @@ function Account() {
         const inputRef = useRef(null);
         const [inputPlaceholder, setInputPlaceholder] = useState('');
 
-        const heading = props.heading;
+        const heading = props.heading.toLowerCase();
 
         useEffect(() => {
             // the logic will run when the component mounts and everytime the currentUser changes.

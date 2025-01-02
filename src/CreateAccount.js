@@ -67,7 +67,7 @@ function CreateAccount() {
             const response = await fetch('http://localhost:5000/create-account/new-user', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ username: username, password: password, role: 'user' }),
+                body: JSON.stringify({ username: username, password: password, role: 'user', email: email }),
             })
     
             if (!response.ok) {

@@ -256,7 +256,7 @@ app.get('/account/:username', (req, res) => {
     // Return updated info and placeholders
     return res.status(200).json({
         message: `Successfully updated info`,
-        email: user['Email'] || 'no email'
+        email: user['email'] || 'no email'
     });
 })
 // ACCOUNT FEATURE END
@@ -293,7 +293,7 @@ app.get('/all-existing-usernames', (req, res) => {
 })
 
 app.post('/create-account/new-user', (req, res) => {
-    const {username, password, role} = req.body;
+    const {username, password, role, email} = req.body;
 
     if (!username) {
         return res.status(400).json({ error: 'Username is required.' });
@@ -314,7 +314,8 @@ app.post('/create-account/new-user', (req, res) => {
     const newUser = {
         'username': username,
         'password': password,
-        'role': role
+        'role': role,
+        'email': email
     }
     users.push(newUser);
     writeUsers(users);

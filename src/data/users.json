@@ -51,7 +51,7 @@
         "notes": "deeply moving"
       }
     ],
-    "Email": "gwen@example.com"
+    "email": "gwen@test.com"
   },
   {
     "username": "benny",
@@ -87,26 +87,24 @@
         "description": "From the bestselling author of Blink and The Tipping Point, Malcolm Gladwell's Outliers: The Story of Success overturns conventional wisdom about genius to show us what makes an ordinary person an extreme overachiever. Why do some people achieve so much more than others? Can they lie so far out of the ordinary? In this provocative and inspiring book, Malcolm Gladwell looks at everyone from rock stars to professional athletes, software billionaires to scientific geniuses, to show that the story of success is far more surprising, and far more fascinating, than we could ever have imagined. He reveals that it's as much about where we're from and what we do, as who we are - and that no one, not even a genius, ever makes it alone. Outliers will change the way you think about your own life story, and about what makes us all unique. 'Gladwell is not only a brilliant storyteller; he can see what those stories tell us, the lessons they contain' Guardian 'Malcolm Gladwell is a global phenomenon ... he has a genius for making everything he writes seem like an impossible adventure' Observer 'He is the best kind of writer - the kind who makes you feel like you're a genius, rather than he's a genius' The Times",
         "notes": "one of the greatest"
       }
-    ],
-    "Email": "zoro@example.com"
+    ]
   },
   {
     "username": "nami",
-    "password": "nami123",
+    "password": "nami",
     "role": "user",
-    "wishlist": [],
+    "email": "nami@test.com",
     "borrowed_books": [
       {
-        "id": "5JFiDgAAQBAJ",
-        "title": "Wonder Woman: Warbringer (DC Icons Series)",
+        "id": "lMBEDwAAQBAJ",
+        "title": "365 Days With Self-Discipline",
         "authors": [
-          "Leigh Bardugo"
+          "Martin Meadows"
         ],
-        "publishedDate": "2017-08-31",
-        "image": "http://books.google.com/books/content?id=5JFiDgAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
-        "description": "The highly anticipated coming-of-age story for the world's greatest super hero: WONDER WOMAN by the # 1 New York Times bestselling author LEIGH BARDUGO. She will become a legend but first she is Diana, Princess of the Amazons. And her fight is just beginning . . . Diana is desperate to prove herself to her warrior sisters. But when the opportunity comes, she throws away her chance at glory and breaks Amazon law to save a mere mortal, Alia Keralis. With this single heroic act, Diana may have just doomed the world. Alia is a Warbringer - a descendant of the infamous Helen of Troy, fated to bring about an age of bloodshed and misery. Diana and Alia will face an army of enemies, mortal and divine, determined to destroy or possess the Warbringer. To save the world, they must stand side by side against the tide of war. Don't miss the new DC Wonder Woman film coming June 2017.",
-        "notes": "strong woman",
-        "dueDate": "2025-01-23T08:26:24.861Z"
+        "publishedDate": "2017-12-28",
+        "image": "http://books.google.com/books/content?id=lMBEDwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+        "description": "How to Build Self-Discipline and Become More Successful (365 Powerful Thoughts From the World’s Brightest Minds) Its lack makes you unable to achieve your goals. Without it, you’ll struggle to lose weight, become fit, wake up early, work productively and save money. Not embracing it in your everyday life means that you’ll never realize your full potential. Ignoring it inevitably leads to regret and feeling sad about how more successful and incredible your life could have been if you had only decided to develop it. What is this powerful thing? Self-discipline. And if there’s one thing that self-discipline is not, it’s instant. It takes months (if not years) to develop powerful self-control that will protect you from impulsive decisions, laziness, procrastination, and inaction. You need to exhibit self-discipline day in, day out, 365 days in a year. What if you had a companion who would remind you daily to stay disciplined and persevere, even when the going gets tough? 365 Days With Self-Discipline is a practical, accessible guidebook for embracing more self-discipline in your everyday life. You’ll learn how to do this through 365 brief, daily insights from the world’s brightest minds, expanded and commented upon by bestselling personal development author Martin Meadows. This isn’t just an inspirational book; most of the entries deliver practical suggestions that you can immediately apply in your life to become more disciplined. Here are just some of the things you’ll learn: - why living your life the hard way makes it easy (and other suggestions from a successful entrepreneur and longevity scientist); - how to overcome your initial resistance and procrastination based on the remark made by one of the most renowned Renaissance men; - why, according to an influential neurosurgeon, it’s key to see problems as hurdles instead of obstacles (and how to do that); - how to embrace an experimental mindset to overcome a fear of failure (a technique recommended by a successful entrepreneur and musician); - how to quit in a smart way, according to a world-famous marketing expert; - how to improve your productivity at work by implementing the advice from one of the most successful detective fiction writers; - how a trick used by screenwriters can help you figure out the first step needed to get closer to your goals; - how to maintain self-discipline in the long-term by paying attention to what a bestselling non-fiction author calls necessary to survive and thrive; - how your most common thoughts can sabotage your efforts (and other valuable insights from one of the most respected Roman Stoics); and - how to overcome temporary discouragement and look at your problems from the proper perspective, as suggested by a well-known public speaker and author. If you’re ready to finally change your life and embrace self-discipline — not only for the next 365 days, but for the rest of your life — buy this book now and together, let’s work on your success! Keywords: self-discipline handbook, self-control book, willpower book, success journal, mental resilience, become successful, achieve your goals",
+        "dueDate": "2025-01-23T10:56:35.219Z"
       }
     ]
   }
