@@ -34,6 +34,14 @@ Borrow a book and add the book into the `BORROWED BOOKS` page.
 - A book that has been returned will be removed from the `BORROWED BOOKS` page.
 
 ## Adding a Book to Wishlist
+Add a book to the wishlist.  
+- For each book returned in the catalogue, click on the `Add to Wishlist` button to add the book to your wishlist. You will be alerted to a success message to inform you that you have successfully added the book to your wishlist.  
+- Clicking on the `Add to Wishlist` button for a book that has already been added, will trigger an alert to indicate that the book has already been added to your wishlist.  
+- All books added to the wishlist will appear in the `WISHLIST` page. Navigate to this page by clicking on `wishlist` in the navigation bar. 
+- If a book has already been borrowed, that book cannot be added to the wishlist.
+- You may borrow a book that was added to the wishlist, from the `WISHLIST` page, by clicking on the `borrow` button. But, doing so will remove the book from the wishlist.  
+- A book can be removed from the wishlist by clicking on the `Remove` button. You will be alerted to a success message to inform you that you have successfully removed the book.  
+- A book that has been removed from the wishlist will be removed from the `WISHLIST` page.
 
 ## Add Notes to a Wishlist Book
 
