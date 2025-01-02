@@ -1,10 +1,36 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 function CreateAccount() {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
     const [email, setEmail] = useState('');
+
+    const [allExistingUsernames, setAllExistingUsernames] = useState([])
+    const [usernameAlreadyTaken, setUsernameAlreadyTaken] = useState(false);
+
+    useEffect(() => {
+        const fetchAllUsernames = async () => {
+            try {
+                const response = await fetch('http://localhost:5000/all-existing-usernames', {
+                    method: 'GET'
+                })
+
+                if (!response.ok) {
+                    throw new Error(`HTTP error! Status: ${response.status}`);
+                }
+
+                const data = await response.json();
+                console.log(data.message);
+                setAllExistingUsernames(data.usernames);
+
+            } catch (error) {
+                console.error();
+            }
+        } 
+
+        fetchAllUsernames();
+    }, [])
 
     const handleClick = (e) => {
         e.preventDefault();

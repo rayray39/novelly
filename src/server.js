@@ -282,6 +282,17 @@ app.get('/:username/admin-all', (req, res) => {
 
     return res.status(200).json({ users: allNonAdminUsers, message: 'Successfully fetched all non-admin users.'})
 })
+// ADMIN ACCOUNT END
+
+// CREATE ACCOUNT START
+app.get('/all-existing-usernames', (req, res) => {
+    const users = readUsers();
+
+    const allExistingUsernames = users.map((user) => user.username);
+    return res.status(200).json({ usernames: allExistingUsernames, message: 'Successfully fetched all existing usernames.'})
+})
+
+// CREATE ACCOUNT END
 
 // Start the server
 app.listen(PORT, () => {
