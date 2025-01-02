@@ -52,3 +52,10 @@ Add a note to a book inside your wishlist.
 - To successfully save your note for that book, always remember to click on `Post`.
 
 ## Update Account Details
+View your existing account details or update them.
+- View your existing account details by clicking on `account` in the navigation bar.
+- Your username is fixed and cannot be changed (i.e., it is read-only).
+- Update your email by entering a new email into the email field. Click on the `save` button to save your changes.
+
+## Additional Notes
+NOVELLY was started as a side project to learn more about using React and Express to build dynamic and interactive webpages. It is by no means a commercial product and should not be used for any commercial purposes (if you do make money however, rmb to buy me a cup of coffee!). 
