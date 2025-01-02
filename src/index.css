@@ -69,7 +69,7 @@ footer {
   width: 100%;
 }
 
-#main-body {
+#main-body, #create-account-page {
   display: flex;
   position: relative;
   inset: 80px 0px 0px 0px;
@@ -83,6 +83,11 @@ footer {
   align-items: center;
   background-color: black;
   border-radius: 30px;
+}
+
+#create-account-page {
+  height: 600px;
+  width: 600px;
 }
 
 .books-card-display {

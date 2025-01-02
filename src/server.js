@@ -256,7 +256,7 @@ app.get('/account/:username', (req, res) => {
     // Return updated info and placeholders
     return res.status(200).json({
         message: `Successfully updated info`,
-        email: user['Email'] || 'no email'
+        email: user['email'] || 'no email'
     });
 })
 // ACCOUNT FEATURE END
@@ -282,6 +282,48 @@ app.get('/:username/admin-all', (req, res) => {
 
     return res.status(200).json({ users: allNonAdminUsers, message: 'Successfully fetched all non-admin users.'})
 })
+// ADMIN ACCOUNT END
+
+// CREATE ACCOUNT START
+app.get('/all-existing-usernames', (req, res) => {
+    const users = readUsers();
+
+    const allExistingUsernames = users.map((user) => user.username);
+    return res.status(200).json({ usernames: allExistingUsernames, message: 'Successfully fetched all existing usernames.'})
+})
+
+app.post('/create-account/new-user', (req, res) => {
+    const {username, password, role, email} = req.body;
+
+    if (!username) {
+        return res.status(400).json({ error: 'Username is required.' });
+    }
+    if (!password) {
+        return res.status(400).json({ error: 'Password is required.' });
+    }
+    if (role !== 'user') {
+        return res.status(400).json({ error: 'Admin permissions not granted.' });
+    }
+
+    const users = readUsers();
+    const existingUser = users.find((user) => user.username === username);
+    if (existingUser) {
+        return res.status(400).json({ error: 'Username already exists.' });
+    }
+
+    const newUser = {
+        'username': username,
+        'password': password,
+        'role': role,
+        'email': email
+    }
+    users.push(newUser);
+    writeUsers(users);
+
+    return res.status(200).json({ newUser: newUser ,message: 'Successfully created user account.'})
+})
+
+// CREATE ACCOUNT END
 
 // Start the server
 app.listen(PORT, () => {

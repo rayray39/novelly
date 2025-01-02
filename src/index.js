@@ -10,6 +10,7 @@ import AdminPage from './AdminPage';
 import Borrowed from './Borrowed';
 import Wishlist from './Wishlist';
 import Account from './Account';
+import CreateAccount from './CreateAccount';
 import { UserProvider } from './UserContext';
 
 
@@ -33,6 +34,7 @@ function MainApp() {
       <Route path='/wishlist' element={<Wishlist/>} />
       <Route path='/account' element={<Account/>} />
       <Route path='/admin-page' element={<AdminPage/>} />
+      <Route path='/create-account' element={<CreateAccount/>} />
     </Routes>
   </BrowserRouter>
 }
