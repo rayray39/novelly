@@ -75,20 +75,19 @@ function CreateAccount() {
                 body: JSON.stringify({ username: username, password: password, role: 'user', email: email }),
             })
     
+            const data = await response.json();
             if (!response.ok) {
                 const message = data.error;
                 console.log(message);
                 return;
             }
     
-            const data = await response.json();
             console.log(data.message);
             setCurrentUser(data.newUser);
+            navigate('/catalogue');
         } catch (error) {
             console.error(`Error in creating user account: ${error}`)
         }
-
-        navigate('/catalogue');
     }
 
     const getUsername = (event) => {
