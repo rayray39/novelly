@@ -48,6 +48,7 @@ function CreateAccount() {
         if (allExistingUsernames.includes(username)) {
             // username already taken
             setUsernameAlreadyTaken(true);
+            return;
         } else {
             setUsernameAlreadyTaken(false);
         }
@@ -57,6 +58,7 @@ function CreateAccount() {
         }
         if (password !== confirmPassword) {
             setPasswordsDoNotMatch(true);
+            return;
         } else {
             setPasswordsDoNotMatch(false);
         }

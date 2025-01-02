@@ -89,5 +89,25 @@
       }
     ],
     "Email": "zoro@example.com"
+  },
+  {
+    "username": "nami",
+    "password": "nami123",
+    "role": "user",
+    "wishlist": [],
+    "borrowed_books": [
+      {
+        "id": "5JFiDgAAQBAJ",
+        "title": "Wonder Woman: Warbringer (DC Icons Series)",
+        "authors": [
+          "Leigh Bardugo"
+        ],
+        "publishedDate": "2017-08-31",
+        "image": "http://books.google.com/books/content?id=5JFiDgAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+        "description": "The highly anticipated coming-of-age story for the world's greatest super hero: WONDER WOMAN by the # 1 New York Times bestselling author LEIGH BARDUGO. She will become a legend but first she is Diana, Princess of the Amazons. And her fight is just beginning . . . Diana is desperate to prove herself to her warrior sisters. But when the opportunity comes, she throws away her chance at glory and breaks Amazon law to save a mere mortal, Alia Keralis. With this single heroic act, Diana may have just doomed the world. Alia is a Warbringer - a descendant of the infamous Helen of Troy, fated to bring about an age of bloodshed and misery. Diana and Alia will face an army of enemies, mortal and divine, determined to destroy or possess the Warbringer. To save the world, they must stand side by side against the tide of war. Don't miss the new DC Wonder Woman film coming June 2017.",
+        "notes": "strong woman",
+        "dueDate": "2025-01-23T08:26:24.861Z"
+      }
+    ]
   }
 ]
