@@ -44,5 +44,11 @@ Add a book to the wishlist.
 - A book that has been removed from the wishlist will be removed from the `WISHLIST` page.
 
 ## Add Notes to a Wishlist Book
+Add a note to a book inside your wishlist.
+- Use this feature to add a note (eg. 'recommended by Joe', 'borrow in a week's time') to a book inside your wishlist.
+- Inside your wishlist, click on the `Add Notes` button to open a text area where you can enter your notes.  
+- Click on the `Post` button to update the notes for that book. 
+- If a book already has an existing note, clicking on the `Add Notes` button followed by clicking on the `Close Notes` will remove that existing note.
+- To successfully save your note for that book, always remember to click on `Post`.
 
 ## Update Account Details
