@@ -320,7 +320,7 @@ app.post('/create-account/new-user', (req, res) => {
     users.push(newUser);
     writeUsers(users);
 
-    return res.status(200).json({ message: 'Successfully created user account.'})
+    return res.status(200).json({ newUser: newUser ,message: 'Successfully created user account.'})
 })
 
 // CREATE ACCOUNT END

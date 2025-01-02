@@ -1,6 +1,11 @@
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { useUser } from "./UserContext";
 
 function CreateAccount() {
+    const navigate = useNavigate();
+    const {currentUser, setCurrentUser} = useUser();
+
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
@@ -23,7 +28,6 @@ function CreateAccount() {
                 }
 
                 const data = await response.json();
-                console.log(data.message);
                 setAllExistingUsernames(data.usernames);
 
             } catch (error) {
@@ -63,6 +67,7 @@ function CreateAccount() {
             setPasswordsDoNotMatch(false);
         }
 
+        // make a POST request to pass info, to create new user.
         try {
             const response = await fetch('http://localhost:5000/create-account/new-user', {
                 method: 'POST',
@@ -78,9 +83,12 @@ function CreateAccount() {
     
             const data = await response.json();
             console.log(data.message);
+            setCurrentUser(data.newUser);
         } catch (error) {
             console.error(`Error in creating user account: ${error}`)
         }
+
+        navigate('/catalogue');
     }
 
     const getUsername = (event) => {
