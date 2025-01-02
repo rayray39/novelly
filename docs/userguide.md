@@ -2,6 +2,7 @@
 NOVELLY is a website for managing your library resources, such as borrowing and returning books, browsing through one of the largest catalogues (Google Books API), and keep track of your account information. It is super easy to use and most importantly, it is FREE!
 
 ## Quick Start
+[This section will be implemented soon!]
 
 ## Overview of Features
 1. create a new account.
