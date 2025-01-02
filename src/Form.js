@@ -63,6 +63,7 @@ function Form() {
 
     const handleCreateAccount = () => {
         console.log('create account button pressed');
+        navigate('/create-account');
     }
 
     return <div>
