@@ -1,4 +1,4 @@
-# NOVELLY  
+# NOVELLY  📚
 NOVELLY is your ultimate library management system, designed to streamline tracking library resources with features like book browsing, borrowing and returning, and adding personalized notes to your wishlist favorites.  
 
 NOVELLY was built using ReactJS, Express.js, and Pico CSS (a minimal CSS framework for semantic HTML). NOVELLY also utilises the [Google Books API](https://developers.google.com/books/docs/overview) to fetch all the books for its catalogue.
