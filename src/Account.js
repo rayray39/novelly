@@ -86,6 +86,9 @@ function Account() {
         </div>
     }
 
+    const handleLogout = () => {
+        console.log('log out button is pressed');
+    }
 
     const NameCard = (props) => {
         // card to display username.
@@ -113,6 +116,8 @@ function Account() {
             <NameCard heading="Name" info={currentUser.username} type='text'/>
             <UserInfoCard heading="Email" type='text'/>
         </div>
+
+        <button id='logout-button' className="pico-background-violet-650" onClick={handleLogout}>Log Out</button>
     </div>
 }
 

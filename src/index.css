@@ -47,6 +47,11 @@ code {
   border: none;
 }
 
+#logout-button {
+  width: 600px;
+  border: none;
+}
+
 #borrow-button, #wishlist-button, #return-button, #remove-button, #add-notes-button {
   background-color: black;
   border: none;
