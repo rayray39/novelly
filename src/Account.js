@@ -1,9 +1,11 @@
 import { useRef, useState, useEffect } from "react";
 import TopNavBar from "./TopNavBar"
 import { useUser } from "./UserContext";
+import { useNavigate } from "react-router-dom";
 
 function Account() {
-    const {currentUser} = useUser();
+    const {currentUser, setCurrentUser} = useUser();
+    const navigate = useNavigate();
 
     const UserInfoCard = (props) => {
         // card to display editable info.
@@ -88,7 +90,17 @@ function Account() {
 
     const handleLogout = () => {
         console.log('log out button is pressed');
+        console.log(`logging ${currentUser.username} out`);
+        setCurrentUser(null);
     }
+
+    useEffect(() => {
+        if (!currentUser) {
+            console.log('successfully logged out user');
+            console.log(`current user: ${currentUser}`);
+            navigate("/")
+        }
+    }, [currentUser])
 
     const NameCard = (props) => {
         // card to display username.
@@ -113,7 +125,7 @@ function Account() {
         <h1 className="main-title-2">ACCOUNT</h1>
         
         <div id="user-info">
-            <NameCard heading="Name" info={currentUser.username} type='text'/>
+            <NameCard heading="Name" info={currentUser?.username} type='text'/>
             <UserInfoCard heading="Email" type='text'/>
         </div>
 

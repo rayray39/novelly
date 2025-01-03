@@ -45,7 +45,6 @@ function Form() {
             }
         } else {
             setPasswordIncorrect(true);
-            alert("Incorrect user credentials!");
             return;
         }
 
