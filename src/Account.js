@@ -89,7 +89,6 @@ function Account() {
     }
 
     const handleLogout = () => {
-        console.log('log out button is pressed');
         console.log(`logging ${currentUser.username} out`);
         setCurrentUser(null);
     }
@@ -97,7 +96,6 @@ function Account() {
     useEffect(() => {
         if (!currentUser) {
             console.log('successfully logged out user');
-            console.log(`current user: ${currentUser}`);
             navigate("/")
         }
     }, [currentUser])
