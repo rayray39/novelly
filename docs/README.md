@@ -13,6 +13,7 @@ NOVELLY is a website for managing your library resources, such as borrowing and 
 4. adding a book to wishlist / removing a book from wishlist.
 5. add notes to a wishlist book.
 6. update account details.
+7. logging out.
 
 ## Create New Account
 Creates a new account for you.  
@@ -66,7 +67,14 @@ View your existing account details or update them.
 - Your username is fixed and cannot be changed (i.e., it is read-only).
 - Update your email by entering a new email into the email field. Click on the `save` button to save your changes.
 
-![Novelly account page](./account.png)
+![Novelly account page](./account.png)  
+
+## Logging Out
+Log out of your account.
+- To log out of your account, you need to be in the `account` page. Navigate to the `account` page by clicking on `account` in the navigation bar.
+- Click on the `Log Out` button to be taken back to the main page of NOVELLY.
+
+![Novelly account page with logout](./logout.png)  
 
 ## Additional Notes
 NOVELLY was started as a side project to learn more about using React and Express to build dynamic and interactive webpages. It is by no means a commercial product and should not be used for any commercial purposes (if you do make money however, rmb to buy me a cup of coffee!). 
