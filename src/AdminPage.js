@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useUser } from "./UserContext";
+import { useNavigate } from "react-router-dom";
 
 function UserCard({username, borrowedBooks, index}) {
 
@@ -24,13 +25,19 @@ function UserCard({username, borrowedBooks, index}) {
 }
 
 function AdminPage() {
-    const {currentUser} = useUser();
+    const {currentUser, setCurrentUser} = useUser();
     const [allUsers, setAllUsers] = useState([]);
+    const navigate = useNavigate();
 
     useEffect(() => {
         fetchAllUsersData();  
-        console.log(`all users: ${allUsers}`)
-    }, [])
+        console.log(`all users: ${allUsers}`);
+
+        if (!currentUser) {
+            console.log('successfully logged out user');
+            navigate("/")
+        }
+    }, [currentUser])
 
     const fetchAllUsersData = async () => {
         try {
@@ -54,6 +61,11 @@ function AdminPage() {
         <UserCard index={index} username={user.username} borrowedBooks={user.borrowed_books}/>
     )
 
+    const handleLogout = () => {
+        console.log(`logging ${currentUser.username} out`);
+        setCurrentUser(null);
+    }
+
     return <>
         <div className="route-page" id="admin-page">
             <nav id="top-nav-bar">
@@ -65,6 +77,8 @@ function AdminPage() {
 
         <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
             <ul>{userItems}</ul>
+
+            <button id='logout-button' className="pico-background-violet-650" onClick={handleLogout}>Log Out</button>
         </div>
     </>
 }
