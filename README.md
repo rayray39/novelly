@@ -1,70 +1,58 @@
-# Getting Started with Create React App
+# NOVELLY  
+NOVELLY is your ultimate library management system, designed to streamline tracking library resources with features like book browsing, borrowing and returning, and adding personalized notes to your wishlist favorites.  
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+NOVELLY was built using ReactJS, Express.js, and Pico CSS (a minimal CSS framework for semantic HTML). NOVELLY also utilises the [Google Books API](https://developers.google.com/books/docs/overview) to fetch all the books for its catalogue.
 
-## Available Scripts
+Click [here](https://rayray39.github.io/novelly/) to view the **User Guide**.  
+Click [here]() to view the **Developer Guide**. *There isn't a Developer Guide yet, it will be completed soon!
 
-In the project directory, you can run:
+## Motivation  
+NOVELLY began as a side project to explore ReactJS, evolving into a dynamic blend of ReactJS and Express.js as new features and data-handling requirements shaped its development.
 
-### `npm start`
+## Learning Outcomes  
+1. Frontend Development
+   - Building interactive UIs using React, including managing state and various hooks (eg. useEffect, useNavigate, useRef etc.).
+   - Leveraged React Router DOM to implement client-side routing for seamless navigation between pages.
+   - Passing and destructuring props for cleaner component design.
+   - Handling conditional rendering and dynamic updates in the DOM.
+   - Creating controlled components for various forms (eg. create account form, sign in form).
+   - Using Pico CSS, a minimal CSS framework, for styling components.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+2. Backend Development
+   - Creating RESTful APIs with Express.js to handle user authentication, resource management, and CRUD operations.
+   - Implementing robust server-side validation and error handling.
+   - Managing data persistence with JSON files for simulating a database.
+   - Designing features for user creation, login, and logout with role-based access control.
+   - Working with dynamic data updates, such as adding new properties to objects and updating placeholders in forms.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+3. Integration
+   - Connecting the frontend and backend seamlessly with fetch requests and proper API endpoints.
+   - Integrated and utilized the Google Books API to fetch and display book data dynamically.
+   - Implementing features like borrowing/returning books, updating user details, and rendering data dynamically across the app.
 
-### `npm test`
+4. Documentation and Github
+   - Writing compelling guides to showcase the project’s purpose, features, and technical journey.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Getting Started  
+1. API key setup
+   - to fetch data from the Google Books API, an API key is required. Visit the official [site](https://developers.google.com/books/docs/v1/using) to see how you can acquire an API key.
+   - in `src/Catalogue.js`, store your API key in the variable `myApiKey`.
 
-### `npm run build`
+2. Install dependencies
+   - open up a terminal in the project directory.
+   - run `npm install` to install all required project dependencies.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+3. Start the backend
+   - run `npm install` (if not already done) to install all backend dependencies.
+   - run `node src/server.js` to start the Express server, the API will run at `http://localhost:5000`.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+4. Start the frontend
+   - open another terminal in the project directory.
+   - run `npm start` to start the developer server, the application will run at `http://localhost:3000`.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Prerequisites  
+Ensure you have the following installed:
+- **Node.js**: `>= 16.x`
+- **npm**: `>= 7.x`
+- **React**: `^18.0.0`
+- **Express**: `^4.21.2`
