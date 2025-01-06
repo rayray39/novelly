@@ -6,6 +6,11 @@ NOVELLY was built using ReactJS, Express.js, and [Pico CSS](https://github.com/p
 Click [here](https://rayray39.github.io/novelly/) to view the **User Guide**.  
 Click [here]() to view the **Developer Guide**. *There isn't a Developer Guide yet, it will be completed soon!  
 
+<div>
+   <img src="https://github.com/rayray39/novelly/blob/master/docs/main%20page.png" alt="novelly main page" width="55%" height="55%" />
+   <img src="https://github.com/rayray39/novelly/blob/master/docs/wishlist.png" alt="novelly wishlist page" width="40%" height="40%" />
+</div>
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Motivation  
